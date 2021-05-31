@@ -37,6 +37,6 @@
 #define TAPPING_TOGGLE 2
 
 #ifdef COMBO_ENABLE
-  #define COMBO_COUNT 8
+  #define COMBO_COUNT 10
 #endif
 
