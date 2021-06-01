@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [MOVE] = LAYOUT(
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                      KC_NO, KC_HOME, KC_UP, KC_PGUP, KC_NO, KC_NO,
     KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_NO,                              KC_NO, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,     KC_NO, KC_NO,    KC_NO, KC_END, MO(FUN), KC_PGDN, KC_TRNS, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO,    KC_NO, KC_END, MO(FUN), KC_PGDN, KC_TRNS, KC_NO,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_LCTRL, KC_NO, KC_TRNS, KC_NO),
 
 // 4: Functions
