@@ -162,7 +162,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*
  * Keymap 4: Functions
- *                                                                         [ Colemak | Qwerty ]
+ *                                                                         [ Colemak | Qwerty ]   [ Linux | Mac ]
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |  F1  |  F2  |  F3  |  F4  |  F5  |                              | DF(1)| DF(2)|      | AGSwp| AGNrm|        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
