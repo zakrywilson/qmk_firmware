@@ -1,7 +1,5 @@
 # zakrywilson's Gergoplex layout
 
-## Layout
-
 ```
  Combomap (horizontal)
  ,-----------------------------.      ,-----------------------------.
@@ -94,7 +92,7 @@ qmk compile -kb gboards/gergoplex -km zakrywilson
 qmk flash -kb gboards/gergoplex -km zakrywilson
 ```
 
-## Output to Ascii
+## Generating Ascii keymap
 
 ```sh
 input_file="keymap.c"
