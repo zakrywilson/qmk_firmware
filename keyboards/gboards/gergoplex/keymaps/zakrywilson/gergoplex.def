@@ -10,7 +10,7 @@ COMB(jhCirc,        KC_CIRC,        KC_J, KC_H)
 COMB(lnAmpr,        KC_AMPR,        KC_L, KC_N)
 COMB(ueAstr,        KC_ASTR,        KC_U, KC_E)
 COMB(yiLparen,      KC_LPRN,        KC_Y, KC_I)
-COMB(scolonORparen, KC_RPRN,        KC_SCOLON, KC_O)
+COMB(scolonOColon,  KC_COLON,       KC_SCOLON, KC_O)
 
 // Backspaces
 COMB(tdBspc,      KC_BSPC,          KC_T, KC_D)
