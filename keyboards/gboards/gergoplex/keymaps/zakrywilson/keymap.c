@@ -6,12 +6,6 @@
 #include QMK_KEYBOARD_H
 #include "g/keymap_combo.h"
 
-/* #define COLEMAK 0 // default base layer */
-/* #define QWERTY 1 // alternative base layer */
-/* #define SYM 2 // symbols and numbers */
-/* #define MV 3 // movement */
-/* #define FN 4 // functions and settings */
-
 enum {
   COLEMAK, // default base layer
   QWERTY,  // alternative base layer
