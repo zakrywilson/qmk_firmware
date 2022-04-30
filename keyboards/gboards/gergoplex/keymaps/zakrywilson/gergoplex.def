@@ -1,0 +1,42 @@
+// Gergoplex specfic combos
+
+// Shifted number row
+COMB(qaExclam,      KC_EXLM,        KC_Q, KC_A)
+COMB(wrAt,          KC_AT,          KC_W, KC_R)
+COMB(fsHash,        KC_HASH,        KC_F, KC_S)
+COMB(ptDlr,         KC_DLR,         KC_P, KC_T)
+COMB(gdPerc,        KC_PERC,        KC_G, KC_D)
+COMB(jhCirc,        KC_CIRC,        KC_J, KC_H)
+COMB(lnAmpr,        KC_AMPR,        KC_L, KC_N)
+COMB(ueAstr,        KC_ASTR,        KC_U, KC_E)
+COMB(yiLparen,      KC_LPRN,        KC_Y, KC_I)
+COMB(scolonORparen, KC_RPRN,        KC_SCOLON, KC_O)
+
+// Backspaces
+COMB(tdBspc,      KC_BSPC,          KC_T, KC_D)
+COMB(hnBspc,      KC_BSPC,          KC_H, KC_N)
+
+// Deletes
+COMB(jlBspc,      KC_DEL,           KC_J, KC_L)
+COMB(pgBspc,      KC_DEL,           KC_P, KC_G)
+
+// Enters
+COMB(scEnt,       KC_ENT,           KC_S, KC_C)
+COMB(mCommEnt,    KC_ENT,           KC_M, KC_COMM)
+
+// Tabs
+COMB(cvTab,       KC_TAB,           KC_C, KC_V)
+COMB(eCommTab,    KC_TAB,           KC_E, KC_COMM)
+
+// Escapes
+COMB(tvEsc,       KC_ESC,            KC_T, KC_V)
+COMB(nmEsc,       KC_ESC,            KC_N, KC_M)
+
+// Spaces
+COMB(dbSpace,     KC_SPACE,          KC_D, KC_B)
+
+// More symbols
+COMB(vbGrv,       KC_GRV,            KC_V, KC_B)
+COMB(hkPlus,      KC_PLUS,           KC_H, KC_K)
+COMB(nmMinus,     KC_MINUS,          KC_N, KC_M)
+COMB(eCommEql,    KC_EQUAL,          KC_E, KC_COMMA)
