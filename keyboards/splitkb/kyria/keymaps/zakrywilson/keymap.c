@@ -22,6 +22,8 @@
     JH_CIRC,
     LN_AMPR,
     UE_ASTR,
+    YI_LPAREN,
+    SCLNO_RPAREN,
     CV_TAB,
     MComm_ENT
   };
@@ -34,6 +36,8 @@
   const uint16_t PROGMEM jh_combo[] = {KC_J, KC_H, COMBO_END};
   const uint16_t PROGMEM ln_combo[] = {KC_L, KC_N, COMBO_END};
   const uint16_t PROGMEM ue_combo[] = {KC_U, KC_E, COMBO_END};
+  const uint16_t PROGMEM yi_combo[] = {KC_Y, KC_I, COMBO_END};
+  const uint16_t PROGMEM sclno_combo[] = {KC_SCLN, KC_O, COMBO_END};
   const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
   const uint16_t PROGMEM mcomm_combo[] = {KC_M, KC_COMM, COMBO_END};
 
@@ -42,7 +46,7 @@
  *
  * ,-----------------------------------.                          ,-----------------------------------.
  * |     |     |     |     |     |     |                          |     |     |     |     |     |     |
- * |-----+- ! -+- @ -+- # -+- $ -+- % -|                          |- ^ -+- & -+- * -+-----+-----+-----|
+ * |-----+- ! -+- @ -+- # -+- $ -+- % -|                          |- ^ -+- & -+- * -+--(--+--)--+-----|
  * |     |     |     |     |     |     |                          |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |     |     |     |     |     |     |     |     |  |     |     |     |     |     |     |     |     |
@@ -72,6 +76,8 @@
     [JH_CIRC] = COMBO(jh_combo, KC_CIRC),
     [LN_AMPR] = COMBO(ln_combo, KC_AMPR),
     [UE_ASTR] = COMBO(ue_combo, KC_ASTR),
+    [YI_LPAREN] = COMBO(yi_combo, KC_LPRN),
+    [SCLNO_RPAREN] = COMBO(sclno_combo, KC_RPRN),
     [CV_TAB] = COMBO(cv_combo, KC_TAB),
     [MComm_ENT] = COMBO(mcomm_combo, KC_ENT)
   };
