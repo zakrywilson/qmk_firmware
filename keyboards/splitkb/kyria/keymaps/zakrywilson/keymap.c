@@ -104,9 +104,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 0: Default Base (Colemak)
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |  `  |  Q  |  W  |  F  |  P  |  G  |                          |  J  |  L  |  U  |  Y  |  ;  |  -  |
+ * | Tab |  Q  |  W  |  F  |  P  |  G  |                          |  J  |  L  |  U  |  Y  |  ;  |  -  |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * | Esc |  A  |  R  |  S  |  T  |  D  |                          |  H  |  N  |  E  |  I  |  O  |  '  |
+ * |GvEsc|  A  |  R  |  S  |  T  |  D  |                          |  H  |  N  |  E  |  I  |  O  |  '  |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |  \  |  Z  |  X  |  C  |  V  |  B  | Tab | Ent |  | Ent | Tab |  K  |  M  |  ,  |  .  |MV(/)|  =  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
@@ -114,8 +114,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `-----------------------------'  `-----------------------------'
  */
 [COLEMAK] = LAYOUT(
-    KC_GRV, KC_Q, KC_W, KC_F, KC_P, KC_G,                                           KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
-    LCTL_T(KC_ESC), KC_A, KC_R, KC_S, KC_T, KC_D,                                   KC_H, KC_N, KC_E, KC_I, KC_O, KC_QUOT,
+    KC_TAB, KC_Q, KC_W, KC_F, KC_P, KC_G,                                           KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
+    QK_GESC, KC_A, KC_R, KC_S, KC_T, KC_D,                                          KC_H, KC_N, KC_E, KC_I, KC_O, KC_QUOT,
     KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_TAB, KC_ENT,        KC_ENT, KC_TAB,   KC_K, KC_M, KC_COMM, KC_DOT, LT(MOVE, KC_SLSH), KC_EQL,
     KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_BSPC,                  KC_BSPC, TT(SYM), KC_SPC, MO(MOVE), TG(NUMPAD)),
 
@@ -123,9 +123,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 1: Alternative Base (Qwerty)
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |  `  |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  -  |
+ * | Tab |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  -  |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * | Esc |  A  |  S  |  D  |  F  |  G  |                          |  H  |  J  |  K  |  L  |  ;  |  '  |
+ * |GvEsc|  A  |  S  |  D  |  F  |  G  |                          |  H  |  J  |  K  |  L  |  ;  |  '  |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |  \  |  Z  |  X  |  C  |  V  |  B  | Tab | Ent |  | Ent | Tab |  N  |  M  |  ,  |  .  |MV(/)|  =  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
@@ -133,8 +133,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `-----------------------------'  `-----------------------------'
  */
 [QWERTY] = LAYOUT(
-    KC_GRV, KC_Q, KC_W, KC_E, KC_R, KC_T,                                           KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS,
-    LCTL_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G,                                   KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
+    KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,                                           KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS,
+    QK_GESC, KC_A, KC_S, KC_D, KC_F, KC_G,                                          KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
     KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_TAB, KC_ENT,        KC_ENT, KC_TAB,   KC_N, KC_M, KC_COMM, KC_DOT, LT(MOVE, KC_SLSH), KC_EQL,
     KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_BSPC,                  KC_BSPC, TT(SYM), KC_SPC, MO(MOVE), TG(NUMPAD)),
 
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 2: Symbols & Numbers
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |  `  |  0  |  7  |  8  |  9  |  ,  |                          |  {  |  }  |  (  |  )  |  :  |  _  |
+ * | Tab |  0  |  7  |  8  |  9  |  ,  |                          |  {  |  }  |  (  |  )  |  :  |  _  |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * | Alt |  0  |  4  |  5  |  6  |  .  |                          |  `  |  -  |  [  |  ]  |  ~  |  "  |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
