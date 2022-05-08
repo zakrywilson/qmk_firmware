@@ -16,18 +16,6 @@
 
 #pragma once
 
-#ifdef OLED_DRIVER_ENABLE
-  #define OLED_DISPLAY_128X64
-#endif
-
-#ifdef RGBLIGHT_ENABLE
-  #define RGBLIGHT_ANIMATIONS
-  #define RGBLIGHT_HUE_STEP 8
-  #define RGBLIGHT_SAT_STEP 8
-  #define RGBLIGHT_VAL_STEP 8
-  #define RGBLIGHT_LIMIT_VAL 150
-#endif
-
 #define MASTER_RIGHT
 #define TAPPING_TERM 200
 #define TAPPING_TOGGLE 2
