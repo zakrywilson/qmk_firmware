@@ -186,14 +186,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |     | F6  | F7  | F8  | F9  | F10 | F11 | F12 |  |     |     |BriDn|VolDn|     |     |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  |     | Ctrl| Shft| LAlt| LGui|
+ *                   |     |     |     |     |     |  |     |     |     |     |     |
  *                   `-----------------------------'  `-----------------------------'
  */
 [FUN] = LAYOUT(
-    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                      DF(COLEMAK), DF(QWERTY), KC_NO, AG_SWAP, AG_NORM, KC_NO,
-    KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                              KC_BRIU, KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,    KC_NO, KC_NO,    KC_BRID, KC_VOLD, KC_TRNS, KC_NO, KC_NO, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_LCTRL, KC_LSFT, KC_LALT, KC_LGUI),
+    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   DF(COLEMAK), DF(QWERTY), KC_NO, AG_SWAP, AG_NORM, KC_NO,
+    KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                           KC_BRIU, KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,    KC_NO, KC_NO, KC_BRID, KC_VOLD, KC_TRNS, KC_NO, KC_NO, KC_NO,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS),
 
 /*
  * Keymap 5: Number pad
