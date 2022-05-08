@@ -28,10 +28,6 @@
   #define RGBLIGHT_LIMIT_VAL 150
 #endif
 
-// If you are using an Elite C rev3 on the slave side, uncomment the lines below:
-#define SPLIT_USB_DETECT
-#define NO_USB_STARTUP_CHECK
-
 #define MASTER_RIGHT
 #define TAPPING_TERM 200
 #define TAPPING_TOGGLE 2
