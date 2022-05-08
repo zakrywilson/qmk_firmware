@@ -86,13 +86,14 @@
 ## Compiling
 
 ```sh
-qmk compile -kb kyria -km zakrywilson
+make clean
+make splitkb/kyria/rev1:zakrywilson
 ```
 
 ## Flashing
 
 ```sh
-qmk flash -kb kyria -km zakrywilson
+make splitkb/kyria/rev1:zakrywilson:flash
 ```
 
 ## Generating Json
