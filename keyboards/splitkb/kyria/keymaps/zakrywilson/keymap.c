@@ -8,7 +8,6 @@
 #define SYM 2
 #define MOVE 3
 #define FUN 4
-#define NUMPAD 5
 
 
 #ifdef COMBO_ENABLE
@@ -110,14 +109,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |  \  |  Z  |  X  |  C  |  V  |  B  | Bspc| Del |  | Del |     |  K  |  M  |  ,  |  .  |MV(/)|  =  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   | Meta| Alt | Shft| Ctrl| Ent |  | Bspc| SYM | Spc | NUM | FN  |
+ *                   | Meta| Alt | Shft| Ctrl| Ent |  | Bspc| SYM | Spc | MV  | FN  |
  *                   `-----------------------------'  `-----------------------------'
  */
 [COLEMAK] = LAYOUT(
     KC_TAB, KC_Q, KC_W, KC_F, KC_P, KC_G,                                       KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
     QK_GESC, KC_A, KC_R, KC_S, KC_T, KC_D,                                      KC_H, KC_N, KC_E, KC_I, KC_O, KC_QUOT,
     KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC, KC_DEL,   KC_DEL, KC_NO,    KC_K, KC_M, KC_COMM, KC_DOT, LT(MOVE, KC_SLSH), KC_EQL,
-    KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_ENT,               KC_BSPC, TT(SYM), KC_SPC, MO(NUMPAD), MO(FUN)),
+    KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_ENT,               KC_BSPC, TT(SYM), KC_SPC, MO(MOVE), MO(FUN)),
 
 /*
  * Keymap 1: Alternative Base (Qwerty)
@@ -136,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,                                      KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS,
     QK_GESC, KC_A, KC_S, KC_D, KC_F, KC_G,                                     KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
     KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC, KC_DEL,  KC_DEL, KC_NO,    KC_N, KC_M, KC_COMM, KC_DOT, LT(MOVE, KC_SLSH), KC_EQL,
-    KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_ENT,              KC_BSPC, TT(SYM), KC_SPC, MO(NUMPAD), MO(FUN)),
+    KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_ENT,              KC_BSPC, TT(SYM), KC_SPC, MO(MOVE), MO(FUN)),
 
 /*
  * Keymap 2: Symbols & Numbers
@@ -161,20 +160,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 3: Movement
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |     |     |                          |     | Home|     | PgU |     |     |
+ * |     |     |     |     |     |     |                          |     | Home| Up  | PgU |     |     |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |     | Ctrl| LGui| LAlt| Shft|     |                          |     | End | Up  | PgD |     |     |
+ * |     | Ctrl| LGui| LAlt| Shft|     |                          |     | Left| Down| Rght|     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |     |     |  | Del |     |     | Left| Down| Rght|     |     |
+ * |     |     |     |     |     |     |     |     |  | Del |     |     | Down|     | PgD |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
  *                   |     |     |     |     |     |  | Bspc| Ent | Shft|     |     |
  *                   `-----------------------------'  `-----------------------------'
  */
 [MOVE] = LAYOUT(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                      KC_NO, KC_HOME, KC_NO, KC_PGUP, KC_NO, KC_NO,
-    KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_NO,                              KC_NO, KC_END, KC_UP, KC_PGDN, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_TRNS, KC_NO,  KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_TRNS, KC_ENT, RSFT_T(KC_SPC), KC_NO, KC_NO),
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                      KC_NO, KC_HOME, KC_UP, KC_PGUP, KC_NO, KC_NO,
+    KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_NO,                              KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_DEL, KC_NO,  KC_NO, KC_END, KC_NO, KC_PGDN, KC_TRNS, KC_NO,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_BSPC, KC_ENT, RSFT_T(KC_SPC), KC_NO, KC_NO),
 
 /*
  * Keymap 4: Functions
@@ -194,23 +193,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                           KC_BRIU, KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,    KC_NO, KC_NO, KC_BRID, KC_VOLD, KC_TRNS, KC_NO, KC_NO, KC_NO,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS),
-
-/*
- * Keymap 5: Number pad
- *
- * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |     |     |                          |     |  7  |  8  |  9  |     |     |
- * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |                          |     |  4  |  5  |  6  |  0  |     |
- * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |     |     |  |     |     |     |  1  |  2  |  3  |     |     |
- * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  |     |     |     |     |     |
- *                   `-----------------------------'  `-----------------------------'
- */
-[NUMPAD] = LAYOUT(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                   KC_NO, KC_7, KC_8, KC_9, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                   KC_NO, KC_4, KC_5, KC_6, KC_0, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,       KC_NO, KC_NO, KC_NO, KC_1, KC_2, KC_3, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                            KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO)
 };
