@@ -96,26 +96,20 @@ make splitkb/kyria/rev1:zakrywilson
 make splitkb/kyria/rev1:zakrywilson:flash
 ```
 
+## Generating Ascii keymap
+
+```sh
+output_file="ascii_keymap.txt"
+
+rg "\* " --glob keymap.c | cut -c 12- > $output_file
+xclip -sel clip $output_file
+```
+
 ## Generating Json
 
 The resulting Json can be imported into the [QMK Online Configurer](https://config.qmk.fm/).
 
 ```sh
-km="zakrywilson"
-kb="kyria"
-tmp="keymap.tmp"
-input_file="keymap.c"
-output_file="$kb".json
-
-qmk c2json -km $km -kb $kb $input_file | sed 's/kyria/kyria\/rev1/g' | python -m json.tool > $output_file
+qmk c2json -km zakrywilson -kb splitkb/kyria/rev1 keymap.c | python3 -m json.tool > kyria.json
 ```
 
-## Generating Ascii keymap
-
-```sh
-input_file="keymap.c"
-output_file="ascii_keymap.txt"
-
-rg "\* " --glob $input_file | cut -c 12- > $output_file
-xclip -sel clip $output_file
-```
