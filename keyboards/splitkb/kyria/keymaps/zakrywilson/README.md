@@ -108,9 +108,9 @@ xclip -sel clip $output_file
 
 ## Generating Json
 
-The resulting Json can be imported into the [QMK Online Configurer](https://config.qmk.fm/).
+The resulting Json can be imported into the
+[QMK Online Configurer](https://config.qmk.fm/).
 
 ```sh
 qmk c2json -km zakrywilson -kb splitkb/kyria/rev1 keymap.c | python3 -m json.tool > kyria.json
 ```
-
