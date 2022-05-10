@@ -18,7 +18,7 @@
 
 #define MASTER_RIGHT
 #define TAPPING_TERM 200
-#define TAPPING_TOGGLE 2
+#define TAPPING_TOGGLE 3
 
 #ifdef COMBO_ENABLE
   #define COMBO_COUNT 16
