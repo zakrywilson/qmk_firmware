@@ -1,7 +1,5 @@
-/* Author: Zach Wilson
- * Keyboard: Gergoplex
- * Keymap codes: https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
- */
+// Author: Zach Wilson
+// Keymap codes: https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
 
 #include QMK_KEYBOARD_H
 #include "g/keymap_combo.h"
