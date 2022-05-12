@@ -146,13 +146,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |  \  |  0  |  1  |  2  |  3  |  :  |     |     |  |     |     |  \  |  =  |  <  |  >  |MV(/)|  +  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     | Shft|     |  |     |     | Shft|     |     |
+ *                   |     |     | Shft| Ctrl|     |  |     |     | Shft|     |     |
  *                   `-----------------------------'  `-----------------------------'
  */
 [SYM] = LAYOUT(
     KC_TRNS, KC_0, KC_7, KC_8, KC_9, KC_COMM,                                     KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_COLON, KC_UNDS,
     OSM(MOD_LALT|MOD_LGUI), KC_0, KC_4, KC_5, KC_6, KC_DOT,                       KC_GRV, KC_MINS, KC_LBRC, KC_RBRC, KC_TILD, KC_DQUO,
-    KC_TRNS, KC_0, KC_1, KC_2, KC_3, KC_COLON, KC_TRNS, KC_NO,    KC_NO, KC_NO,   KC_BSLS, KC_EQL, KC_LT, KC_GT, KC_TRNS, KC_PLUS,
+    KC_TRNS, KC_0, KC_1, KC_2, KC_3, KC_COLON, KC_NO, KC_NO,      KC_NO, KC_NO,   KC_BSLS, KC_EQL, KC_LT, KC_GT, KC_TRNS, KC_PLUS,
     KC_TRNS, KC_TRNS, LSFT_T(KC_SPC), KC_TRNS, KC_NO,             KC_NO, KC_TRNS, RSFT_T(KC_SPC), KC_NO, KC_NO),
 
 /*
