@@ -163,16 +163,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * |     | Ctrl| LGui| LAlt| Shft| Del |                          | Bspc| Left| Down| Rght|     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     | Home| End | PgU | PgD |     |     |     |  | Del |     |     |     |     |     |     |     |
+ * |     |     |     |     |     |     |     |     |  | Del |     |     | Home|     | End |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  | Bspc| Ent | Shft|     |     |
+ *                   |     |     |     |     |     |  | Bspc| Ent | Shft| PgUp| PgDn|
  *                   `-----------------------------'  `-----------------------------'
  */
 [MOVE] = LAYOUT(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                           KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,                                  KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
-    KC_NO, KC_HOME, KC_END, KC_PGUP, KC_PGDN, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                        KC_BSPC, KC_ENT,  RSFT_T(KC_SPC), KC_NO, KC_NO),
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,                           KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, KC_NO, KC_HOME, KC_NO, KC_END, KC_TRNS, KC_NO,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_ENT,  RSFT_T(KC_SPC), KC_PGUP, KC_PGDN),
 
 /*
  * Keymap 4: Functions
