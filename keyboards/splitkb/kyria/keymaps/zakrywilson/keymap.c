@@ -22,6 +22,7 @@
     UE_ASTR,
     YI_LPAREN,
     SCLNO_RPAREN,
+    YSCLN_COLON,
     PG_DEL,
     JL_DEL,
     TD_BCSP,
@@ -40,6 +41,7 @@
   const uint16_t PROGMEM ue_combo[] = {KC_U, KC_E, COMBO_END};
   const uint16_t PROGMEM yi_combo[] = {KC_Y, KC_I, COMBO_END};
   const uint16_t PROGMEM sclno_combo[] = {KC_SCLN, KC_O, COMBO_END};
+  const uint16_t PROGMEM yscln_combo[] = {KC_Y, KC_SCLN, COMBO_END};
   const uint16_t PROGMEM pg_del[] = {KC_P, KC_G, COMBO_END};
   const uint16_t PROGMEM jl_del[] = {KC_J, KC_L, COMBO_END};
   const uint16_t PROGMEM td_bcsp[] = {KC_T, KC_D, COMBO_END};
@@ -64,7 +66,7 @@
  * Combomap (horizontal)
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |    Del    |                          |    Del    |     |     |     |     |
+ * |     |     |     |     |    Del    |                          |    Del    |     |     :     |     |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * |     |     |     |     |    Bcsp   |                          |   Bcsp    |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
@@ -84,6 +86,7 @@
     [UE_ASTR] = COMBO(ue_combo, KC_ASTR),
     [YI_LPAREN] = COMBO(yi_combo, KC_LPRN),
     [SCLNO_RPAREN] = COMBO(sclno_combo, KC_RPRN),
+    [YSCLN_COLON] = COMBO(yscln_combo, KC_COLON),
     [PG_DEL] = COMBO(pg_del, KC_DEL),
     [JL_DEL] = COMBO(jl_del, KC_DEL),
     [TD_BCSP] = COMBO(td_bcsp, KC_BSPC),
