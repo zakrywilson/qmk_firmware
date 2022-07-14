@@ -103,29 +103,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 3: Movement
  *
  * ,-----------------------------.      ,-----------------------------.
- * |     |     |     |     | Del |      | Del | Home| Up  | Pgu |     |
+ * |     |     |     |     |     |      |     | Home| Up  | Pgu |     |
  * |-----+-----+-----+-----+-----|      |-----------------------------|
- * | Ctl |  OS | Alt | Sft | Bspc|      | Bspc| Left| Dwn | Rght|     |
+ * | Ctl | OS  | Alt | Sft | Del |      | Bspc| Left| Dwn | Rght|     |
  * |-----+-----+-----+-----+-----+      |-----------------------------|
- * |     |     |     |     | Ent |      | Ent | End | FN  | Pgd | Trns|
+ * |     |     |     |     |     |      | Ent | End | FN  | Pgd | Trns|
  * `-----+-----+-----+-----+-----'      `-----------------------------'
  *      .------------------------.      .------------------------.
- *      | Trns | S_T(Spc) | Ctrl |      | Ctrl | S_T(Spc) | Trns |
+ *      | Trns | S_T(Spc) | Ctrl |      | Ent  | S_T(Spc) | Trns |
  *      '------------------------'      '------------------------'
  */
 [MV] = LAYOUT_split_3x5_3(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_DEL,     KC_DEL,  KC_HOME, KC_UP,   KC_PGUP, KC_NO,
-    KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_BSPC,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,     KC_ENT,  KC_END,  MO(FN),  KC_PGDN, KC_TRNS,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,  KC_HOME, KC_UP,   KC_PGUP, KC_NO,
+    KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_ENT,  KC_END,  MO(FN),  KC_PGDN, KC_TRNS,
 
-    KC_TRNS, LSFT_T(KC_SPC), KC_LCTL,               KC_RCTL, RSFT_T(KC_SPC), KC_LGUI
+    KC_TRNS, LSFT_T(KC_SPC), KC_LCTL,              KC_ENT, RSFT_T(KC_SPC), KC_LGUI
     ),
 /* Keymap 4: Functions & Settings
  *
  * ,-----------------------------.      ,-----------------------------.
  * | F1  | F2  | F3  | F4  | F5  |      |DF(1)|DF(2)|     |AGSwp|AGNrm| // 1=Colemak, 2=Qwerty
  * |-----+-----+-----+-----+-----|      |-----------------------------|
- * | Ctl |  OS | Alt | Sft |     |      | BriU| VolU|     |     |     |
+ * | Ctl | OS  | Alt | Sft |     |      | BriU| VolU|     |     |     |
  * |-----+-----+-----+-----+-----+      |-----------------------------|
  * | F6  | F7  | F8  | F9  | F10 |      | BriD| VolD| Trns|     |     |
  * `-----+-----+-----+-----+-----'      `-----------------------------'
@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [FN] = LAYOUT_split_3x5_3(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,      DF(QWERTY), DF(COLEMAK), KC_NO,   AG_SWAP, AG_NORM,
-    KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_BSPC,    KC_BRIU,    KC_VOLU,     KC_NO,   KC_NO,   KC_NO,
+    KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_NO,      KC_BRIU,    KC_VOLU,     KC_NO,   KC_NO,   KC_NO,
     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,     KC_BRID,    KC_VOLD,     KC_TRNS, KC_NO,   KC_NO,
 
     KC_F11,  KC_LSFT, KC_F12,                       KC_RCTL, KC_RSFT, KC_LGUI
