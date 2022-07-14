@@ -14,7 +14,7 @@ CONSOLE_ENABLE         = no
 #Combos!
 VPATH                  +=  keyboards/gboards/
 
-DEBOUNCE_TYPE = sym_eager_pk
+DEBOUNCE_TYPE = asym_eager_defer_pk
 
 ifeq ($(strip $(DEBUG_MATRIX)), yes)
     OPT_DEFS += -DDEBUG_MATRIX
