@@ -10,7 +10,7 @@ COMB(jhCirc,        KC_CIRC,        KC_J, KC_H)
 COMB(lnAmpr,        KC_AMPR,        KC_L, KC_N)
 COMB(ueAstr,        KC_ASTR,        KC_U, KC_E)
 COMB(yiLparen,      KC_LPRN,        KC_Y, KC_I)
-COMB(scolonOColon,  KC_COLON,       KC_SCOLON, KC_O)
+COMB(scolonORparen, KC_RPRN,        KC_SCOLON, KC_O)
 
 // Backspaces
 COMB(tdBspc,      KC_BSPC,          KC_T, KC_D)
@@ -36,7 +36,8 @@ COMB(nmEsc,       KC_ESC,            KC_N, KC_M)
 COMB(dbSpace,     KC_SPACE,          KC_D, KC_B)
 
 // More symbols
-COMB(vbGrv,       KC_GRV,            KC_V, KC_B)
-COMB(hkPlus,      KC_PLUS,           KC_H, KC_K)
-COMB(nmMinus,     KC_MINUS,          KC_N, KC_M)
-COMB(eCommEql,    KC_EQUAL,          KC_E, KC_COMMA)
+COMB(vbGrv,        KC_GRV,          KC_V, KC_B)
+COMB(hkPlus,       KC_PLUS,         KC_H, KC_K)
+COMB(nmMinus,      KC_MINUS,        KC_N, KC_M)
+COMB(eCommEql,     KC_EQUAL,        KC_E, KC_COMMA)
+COMB(yScolonColon, KC_COLON,        KC_Y, KC_SCOLON)
