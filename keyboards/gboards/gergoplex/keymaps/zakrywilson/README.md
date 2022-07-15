@@ -88,10 +88,18 @@ make gboards/gergoplex:zakrywilson:flash
 
 ## Generating ascii keymap
 
+### Linux
+
 ```sh
 input_file="keymap.c"
 output_file="ascii_keymap.txt"
 
 rg "\* " --glob $input_file | cut -c 12- > $output_file
 xclip -sel clip $output_file
+```
+
+### Mac
+
+```sh
+rg "\* " --glob $input_file | cut -c 12- | pbcopy
 ```
