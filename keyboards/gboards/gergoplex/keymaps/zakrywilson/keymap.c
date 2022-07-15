@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_0,           KC_4, KC_5, KC_6, KC_DOT,      KC_GRV,  KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT,
     LGUI_T(KC_ENT), KC_1, KC_2, KC_3, KC_COLON,    KC_BSLS, KC_EQL,  KC_LT,   KC_GT,   KC_TRNS,
 
-    KC_TRNS, LSFT_T(KC_SPC), KC_LCTL,              KC_TRNS, RSFT_T(KC_SPC), KC_LGUI
+    _______, LSFT_T(KC_SPC), KC_LCTL,              _______, RSFT_T(KC_SPC), KC_LGUI
     ),
 /* Keymap 3: Movement
  *
@@ -115,11 +115,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *      '------------------------'     '------------------------'
  */
 [MV] = LAYOUT_split_3x5_3(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,  KC_HOME, KC_UP,   KC_PGUP, KC_NO,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_HOME, KC_UP,   KC_PGUP, KC_NO,
     KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_ENT,  KC_END,  MO(FN),  KC_PGDN, KC_TRNS,
 
-    KC_TRNS, LSFT_T(KC_SPC), KC_LCTL,              LT(NUM, KC_SLSH), RSFT_T(KC_SPC), KC_LGUI
+    _______, LSFT_T(KC_SPC), KC_LCTL,              LT(NUM, KC_SLSH), RSFT_T(KC_SPC), KC_LGUI
     ),
 /* Keymap 3: Number pad
  *
@@ -135,11 +135,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *      '------------------------'     '------------------------'
  */
 [NUM] = LAYOUT_split_3x5_3(
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TAB,  KC_7, KC_8, KC_9, CTL_T(KC_COLON),
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_MINS, KC_4, KC_5, KC_6, ALT_T(KC_0),
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_ENT,  KC_1, KC_2, KC_3, SFT_T(KC_SLSH),
+    _______, _______, _______, _______, _______,    KC_TAB,  KC_7, KC_8, KC_9, CTL_T(KC_COLON),
+    _______, _______, _______, _______, _______,    KC_MINS, KC_4, KC_5, KC_6, ALT_T(KC_0),
+    _______, _______, _______, _______, _______,    KC_ENT,  KC_1, KC_2, KC_3, SFT_T(KC_SLSH),
 
-    KC_TRNS, KC_TRNS, KC_TRNS,                      KC_TRNS, KC_SPC, KC_TRNS
+    _______, _______, _______,                      KC_TRNS, KC_SPC, _______
     ),
 /* Keymap 4: Functions & Settings
  *
