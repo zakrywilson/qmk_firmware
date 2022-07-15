@@ -80,19 +80,13 @@ Keymap 4: Functions & Settings
      '------------------------'      '------------------------'
 ```
 
-## Compiling
+## Compiling & flashing
 
 ```sh
-qmk compile -kb gboards/gergoplex -km zakrywilson
+make gboards/gergoplex:zakrywilson:flash
 ```
 
-## Flashing
-
-```sh
-qmk flash -kb gboards/gergoplex -km zakrywilson
-```
-
-## Generating Ascii keymap
+## Generating ascii keymap
 
 ```sh
 input_file="keymap.c"
