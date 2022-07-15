@@ -5,13 +5,13 @@
 # Firmware options
 MOUSEKEY_ENABLE        = no
 
-#Debug options
+# Debug options
 VERBOSE                = no
 DEBUG_MATRIX_SCAN_RATE = no
 DEBUG_MATRIX           = no
 CONSOLE_ENABLE         = no
 
-#Combos!
+# Combos
 COMBO_ENABLE           = yes
 VPATH                  +=  keyboards/gboards/
 
