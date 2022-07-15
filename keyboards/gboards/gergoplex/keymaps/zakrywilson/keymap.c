@@ -7,8 +7,9 @@
 enum {
   COLEMAK, // default base layer
   QWERTY,  // alternative base layer
-  SYM,     // symbols and numbers
+  SYM,     // symbols (right hand) and numbers (left hand)
   MV,      // movement
+  NUM,     // number pad (for the right hand)
   FN,      // functions and settings
 };
 
@@ -110,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |     |     |     |     |     |     | Ent | End | FN  | Pgd | Trns|
  * `-----+-----+-----+-----+-----'     `-----------------------------'
  *      .------------------------.     .------------------------.
- *      | Trns | S_T(Spc) | Ctrl |     | Ent  | S_T(Spc) | Trns |
+ *      | Trns | S_T(Spc) | Ctrl |     |NUM(/)| S_T(Spc) | Trns |
  *      '------------------------'     '------------------------'
  */
 [MV] = LAYOUT_split_3x5_3(
@@ -118,7 +119,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_ENT,  KC_END,  MO(FN),  KC_PGDN, KC_TRNS,
 
-    KC_TRNS, LSFT_T(KC_SPC), KC_LCTL,              KC_ENT, RSFT_T(KC_SPC), KC_LGUI
+    KC_TRNS, LSFT_T(KC_SPC), KC_LCTL,              LT(NUM, KC_SLSH), RSFT_T(KC_SPC), KC_LGUI
+    ),
+/* Keymap 3: Number pad
+ *
+ * ,-----------------------------.     ,-----------------------------.
+ * |     |     |     |     |     |     | Tab |  7  |  8  |  9  |  :  | // : → Mod-Tap: Ctrl
+ * |-----+-----+-----+-----+-----|     |-----+-----+-----+-----------|
+ * |     |     |     |     |     |     |  -  |  4  |  5  |  6  |  0  | // 0 → Mod-Tap: Alt/Cmd
+ * |-----+-----+-----+-----+-----+     |-----+-----+-----+-----------|
+ * |     |     |     |     |     |     | Ent |  1  |  2  |  3  |  /  | // / → Mod-Tap: Shift
+ * `-----------------------------'     `-----+-----+-----+-----------'
+ *      .------------------------.     .------------------------.
+ *      |       |        |       |     | Trns |   Spc    | Meta |
+ *      '------------------------'     '------------------------'
+ */
+[NUM] = LAYOUT_split_3x5_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TAB,  KC_7, KC_8, KC_9, CTL_T(KC_COLON),
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_MINS, KC_4, KC_5, KC_6, ALT_T(KC_0),
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_ENT,  KC_1, KC_2, KC_3, SFT_T(KC_SLSH),
+
+    KC_TRNS, KC_TRNS, KC_TRNS,                      KC_TRNS, KC_SPC, KC_TRNS
     ),
 /* Keymap 4: Functions & Settings
  *
@@ -139,5 +160,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,    KC_BRID,    KC_VOLD,     KC_TRNS, KC_NO,   KC_NO,
 
     KC_F11,  KC_LSFT, KC_F12,                      KC_RCTL, KC_RSFT, KC_LGUI
-    ),
+    )
 };
