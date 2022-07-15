@@ -12,6 +12,7 @@ DEBUG_MATRIX           = no
 CONSOLE_ENABLE         = no
 
 #Combos!
+COMBO_ENABLE           = yes
 VPATH                  +=  keyboards/gboards/
 
 DEBOUNCE_TYPE = asym_eager_defer_pk
