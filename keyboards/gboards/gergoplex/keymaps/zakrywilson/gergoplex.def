@@ -29,11 +29,11 @@ COMB(cvTab,       KC_TAB,           KC_C, KC_V)
 COMB(eCommTab,    KC_TAB,           KC_E, KC_COMM)
 
 // Escapes
-COMB(tvEsc,       KC_ESC,            KC_T, KC_V)
-COMB(nmEsc,       KC_ESC,            KC_N, KC_M)
+COMB(tvEsc,       KC_ESC,           KC_T, KC_V)
+COMB(nmEsc,       KC_ESC,           KC_N, KC_M)
 
 // Spaces
-COMB(dbSpace,     KC_SPACE,          KC_D, KC_B)
+COMB(dbSpace,     KC_SPACE,         KC_D, KC_B)
 
 // More symbols
 COMB(vbGrv,        KC_GRV,          KC_V, KC_B)
