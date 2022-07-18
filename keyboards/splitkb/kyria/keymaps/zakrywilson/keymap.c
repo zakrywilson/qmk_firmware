@@ -194,7 +194,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `-----------------------------'  `-----------------------------'
  */
 [FUN] = LAYOUT(
-    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   DF(COLEMAK), DF(QWERTY), KC_NO, AG_SWAP, AG_NORM, KC_NO,
+    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   DF(COLEMAK), DF(QWERTY), KC_NO, AG_NORM, AG_SWAP, KC_NO,
     KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                           KC_BRIU, KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,    KC_NO, KC_NO, KC_BRID, KC_VOLD, KC_TRNS, KC_NO, KC_NO, KC_NO,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS),
