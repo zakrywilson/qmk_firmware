@@ -27,6 +27,7 @@
     JL_DEL,
     TD_BCSP,
     HN_BCSP,
+    XC_SFT_TAB,
     CV_TAB,
     MComm_ENT
   };
@@ -46,6 +47,7 @@
   const uint16_t PROGMEM jl_del[] = {KC_J, KC_L, COMBO_END};
   const uint16_t PROGMEM td_bcsp[] = {KC_T, KC_D, COMBO_END};
   const uint16_t PROGMEM hn_bcsp[] = {KC_H, KC_N, COMBO_END};
+  const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
   const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
   const uint16_t PROGMEM mcomm_combo[] = {KC_M, KC_COMM, COMBO_END};
 
@@ -70,7 +72,7 @@
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * |     |     |     |     |    Bcsp   |                          |   Bcsp    |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |    Tab    |     |     |     |  |     |     |     |    Ent    |     |     |     |
+ * |     |     |  S(Tab)  Tab    |     |     |     |  |     |     |     |    Ent    |     |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
  *                   |     |     |     |     |     |  |     |     |     |     |     |
  *                   `-----------------------------'  `-----------------------------'
@@ -91,6 +93,7 @@
     [JL_DEL] = COMBO(jl_del, KC_DEL),
     [TD_BCSP] = COMBO(td_bcsp, KC_BSPC),
     [HN_BCSP] = COMBO(hn_bcsp, KC_BSPC),
+    [XC_SFT_TAB] = COMBO(xc_combo, S(KC_TAB)),
     [CV_TAB] = COMBO(cv_combo, KC_TAB),
     [MComm_ENT] = COMBO(mcomm_combo, KC_ENT)
   };
