@@ -169,16 +169,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * |     | Ctrl| LGui| LAlt| Shft| Del |                          | Bspc| Left| Down| Rght|     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |     |     |  | Del |     |     | Home|     | End |     |     |
+ * |     |     |     |     |     |     |     |     |  | Del |     |     | Ent | Home| End |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  | Bspc| Ent | Shft| PgUp| PgDn|
+ *                   |     |     |     |     |     |  | Bspc| Ctrl| Shft| PgUp| PgDn|
  *                   `-----------------------------'  `-----------------------------'
  */
 [MOVE] = LAYOUT(
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,                           KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, KC_NO, KC_HOME, KC_NO, KC_END, KC_TRNS, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_ENT,  RSFT_T(KC_SPC), KC_PGUP, KC_PGDN),
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, KC_NO, KC_ENT, KC_HOME, KC_END, KC_TRNS, KC_NO,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_LCTL, RSFT_T(KC_SPC), KC_PGUP, KC_PGDN),
 
 /*
  * Keymap 4: Functions
