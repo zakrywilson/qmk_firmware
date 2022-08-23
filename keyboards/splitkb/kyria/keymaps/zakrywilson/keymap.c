@@ -2,12 +2,24 @@
 // Keymap codes: https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
 #include QMK_KEYBOARD_H
 
-#define COLEMAK 0
-#define QWERTY 1
-#define SYM 2
-#define MOVE 3
-#define FUN 4
+// Layers
+enum layers {
+  _COLEMAK,
+  _QWERTY,
+  _SYM,     // "symbols"
+  _MV,      // "move"
+  _FN,      // "function"
+};
 
+// Custom keys
+#define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
+#define MAC      AG_NORM          // Unswap Alt/Opt and Gui/Cmd to work for Mac (default)
+#define MOD_LCMD MOD_LGUI         // Alias for MOD_LGUI
+#define MOD_LOPT MOD_LALT         // Alias for MOD_LALT
+#define MV_SLSH  LT(_MV, KC_SLSH) // Turn on layer when held, kc when tapped
+#define NIX      AG_SWAP          // Swap Alt/Opt and Gui/Cmd to work for Linux
+#define QWTY     DF(_QWERTY)      // Set the base (default) layer to QWERTY
+#define S_SPC    LSFT_T(KC_SPC)   // Shift if held, space if tapped
 
 #ifdef COMBO_ENABLE
 
@@ -52,27 +64,14 @@
   const uint16_t PROGMEM mcomm_combo[] = {KC_M, KC_COMM, COMBO_END};
 
 /*
- * Combomap (vertical)
+ * Combomap
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+ * |     |     |     |     |     ⌦     |                          |     ⌦     |     |     :     |     |
  * |-----+- ! -+- @ -+- # -+- $ -+- % -|                          |- ^ -+- & -+- * -+--(--+--)--+-----|
- * |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+ * |     |     |     |     |     ⌫     |                          |     ⌫     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |     |     |  |     |     |     |     |     |     |     |     |
- * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  |     |     |     |     |     |
- *                   `-----------------------------'  `-----------------------------'
- */
-/*
- * Combomap (horizontal)
- *
- * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |    Del    |                          |    Del    |     |     :     |     |
- * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |    Bcsp   |                          |   Bcsp    |     |     |     |     |
- * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |  S(Tab)  Tab    |     |     |     |  |     |     |     |    Ent    |     |     |     |
+ * |     |     |     ⇤     ⇥     |     |     |     |  |     |     |     |     ⌅     |     |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
  *                   |     |     |     |     |     |  |     |     |     |     |     |
  *                   `-----------------------------'  `-----------------------------'
@@ -108,39 +107,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 0: Default Base (Colemak)
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * | Tab |  Q  |  W  |  F  |  P  |  G  |                          |  J  |  L  |  U  |  Y  |  ;  |  -  |
+ * |  ⇥  |  Q  |  W  |  F  |  P  |  G  |                          |  J  |  L  |  U  |  Y  |  ;  |  -  |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |GvEsc|  A  |  R  |  S  |  T  |  D  |                          |  H  |  N  |  E  |  I  |  O  |  '  |
+ * | ` ⎋ |  A  |  R  |  S  |  T  |  D  |                          |  H  |  N  |  E  |  I  |  O  |  '  |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |  \  |  Z  |  X  |  C  |  V  |  B  | Bspc| Del |  | Del | Ent |  K  |  M  |  ,  |  .  |MV(/)|  =  |
+ * |  \  |  Z  |  X  |  C  |  V  |  B  |  ⌫  |  ⌦  |  |  ⌦  |  ⌅  |  K  |  M  |  ,  |  .  |MV(/)|  =  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   | Meta| Alt | Shft| Ctrl| Ent |  | Bspc| SYM | Spc | MV  | FN  |
+ *                   |  ⌥  |  ⌘  |  ⇧  |  ⌃  |  ⌅  |  |  ⌫  | SYM |  ␣  | MV  | FN  |
  *                   `-----------------------------'  `-----------------------------'
  */
-[COLEMAK] = LAYOUT(
-    KC_TAB,  KC_Q, KC_W, KC_F, KC_P, KC_G,                                      KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
-    QK_GESC, KC_A, KC_R, KC_S, KC_T, KC_D,                                      KC_H, KC_N, KC_E, KC_I, KC_O,    KC_QUOT,
-    KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC, KC_DEL,   KC_DEL, KC_ENT,   KC_K, KC_M, KC_COMM,    KC_DOT,  LT(MOVE, KC_SLSH), KC_EQL,
-    KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_ENT,               KC_BSPC, TT(SYM), KC_SPC, MO(MOVE), MO(FUN)),
+[_COLEMAK] = LAYOUT(
+    KC_TAB,  KC_Q, KC_W, KC_F, KC_P, KC_G,                                       KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
+    QK_GESC, KC_A, KC_R, KC_S, KC_T, KC_D,                                       KC_H, KC_N, KC_E, KC_I, KC_O,    KC_QUOT,
+    KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC, KC_DEL,   KC_DEL,  KC_ENT,   KC_K, KC_M, KC_COMM,    KC_DOT,  MV_SLSH, KC_EQL,
+    KC_LOPT, KC_LCMD, KC_LSFT, KC_LCTL, KC_ENT,               KC_BSPC, TT(_SYM), KC_SPC, MO(_MV), MO(_FN)),
 
 /*
  * Keymap 1: Alternative Base (Qwerty)
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * | Tab |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  -  |
+ * |  ⇥  |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  -  |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |GvEsc|  A  |  S  |  D  |  F  |  G  |                          |  H  |  J  |  K  |  L  |  ;  |  '  |
+ * | ` ⎋ |  A  |  S  |  D  |  F  |  G  |                          |  H  |  J  |  K  |  L  |  ;  |  '  |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |  \  |  Z  |  X  |  C  |  V  |  B  | Bspc| Del |  | Del | Ent |  N  |  M  |  ,  |  .  |MV(/)|  =  |
+ * |  \  |  Z  |  X  |  C  |  V  |  B  |  ⌫  |  ⌦  |  |  ⌦  |  ⌅  |  N  |  M  |  ,  |  .  |MV(/)|  =  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   | Meta| Alt | Shft| Ctrl| Ent |  | Bspc| SYM | Spc | MV  | FN  |
+ *                   |  ⌥  |  ⌘  |  ⇧  |  ⌃  |  ⌅  |  |  ⌫  | SYM |  ␣  | MV  | FN  |
  *                   `-----------------------------'  `-----------------------------'
  */
-[QWERTY] = LAYOUT(
-    KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,                                      KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_MINS,
-    QK_GESC, KC_A, KC_S, KC_D, KC_F, KC_G,                                      KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_QUOT,
-    KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC, KC_DEL,   KC_DEL, KC_ENT,   KC_K, KC_M, KC_COMM, KC_DOT, LT(MOVE, KC_SLSH), KC_EQL,
-    KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, KC_ENT,               KC_BSPC, TT(SYM), KC_SPC, MO(MOVE), MO(FUN)),
+[_QWERTY] = LAYOUT(
+    KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,                                       KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_MINS,
+    QK_GESC, KC_A, KC_S, KC_D, KC_F, KC_G,                                       KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_QUOT,
+    KC_BSLS, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_BSPC, KC_DEL,   KC_DEL,  KC_ENT,   KC_K, KC_M, KC_COMM, KC_DOT, MV_SLSH, KC_EQL,
+    KC_LOPT, KC_LCMD, KC_LSFT, KC_LCTL, KC_ENT,               KC_BSPC, TT(_SYM), KC_SPC, MO(_MV), MO(_FN)),
 
 /*
  * Keymap 2: Symbols & Numbers
@@ -148,53 +147,53 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------.                          ,-----------------------------------.
  * | Tab |  0  |  7  |  8  |  9  |  ,  |                          |  {  |  }  |  (  |  )  |  :  |  _  |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * | Alt |  0  |  4  |  5  |  6  |  .  |                          |  `  |  -  |  [  |  ]  |  ~  |  "  |
+ * | ⌘ ⌥ |  0  |  4  |  5  |  6  |  .  |                          |  `  |  -  |  [  |  ]  |  ~  |  "  |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |  \  |  0  |  1  |  2  |  3  |  :  |     |     |  |     |     |  \  |  =  |  <  |  >  |MV(/)|  +  |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     | Shft| Ctrl|     |  |     |     | Shft|     |     |
+ *                   |  ⌥  |  ⌘  | ⇧ ␣ |  ⌃  |     |  |     |#####| ⇧ ␣ |     |     |
  *                   `-----------------------------'  `-----------------------------'
  */
-[SYM] = LAYOUT(
+[_SYM] = LAYOUT(
     KC_TRNS, KC_0, KC_7, KC_8, KC_9, KC_COMM,                                     KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_COLON, KC_UNDS,
-    OSM(MOD_LALT|MOD_LGUI), KC_0, KC_4, KC_5, KC_6, KC_DOT,                       KC_GRV, KC_MINS, KC_LBRC, KC_RBRC, KC_TILD, KC_DQUO,
+    OSM(MOD_LCMD|MOD_LOPT), KC_0, KC_4, KC_5, KC_6, KC_DOT,                       KC_GRV, KC_MINS, KC_LBRC, KC_RBRC, KC_TILD, KC_DQUO,
     KC_TRNS, KC_0, KC_1, KC_2, KC_3, KC_COLON, KC_NO, KC_NO,      KC_NO, KC_NO,   KC_BSLS, KC_EQL, KC_LT, KC_GT, KC_TRNS, KC_PLUS,
-    KC_TRNS, KC_TRNS, LSFT_T(KC_SPC), KC_TRNS, KC_NO,             KC_NO, KC_TRNS, RSFT_T(KC_SPC), KC_NO, KC_NO),
+    KC_TRNS, KC_TRNS, S_SPC, KC_TRNS, KC_NO,                      KC_NO, KC_TRNS, S_SPC, KC_NO, KC_NO),
 
 /*
  * Keymap 3: Movement
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |     |     |                          |     |     | Up  |     |     |     |
+ * |     |     |     |     |     |     |                          |     |     |  ↑  |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |     | Ctrl| LGui| LAlt| Shft| Del |                          | Bspc| Left| Down| Rght|     |     |
+ * |     |  ⌃  |  ⌥  |  ⌘  |  ⇧  |  ⌦  |                          |  ⌫  |  ←  |  ↓  |  →  |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |     |     |  | Del |     |     | Ent | Home| End |     |     |
+ * |     |     |     |     |     |     |     |     |  |  ⌦  |  ⌅  |     |  ⌅  |  ↖  |  ↘  |#####|     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  | Bspc| Ctrl| Shft| PgUp| PgDn|
+ *                   |  ⌥  |  ⌘  |  ⇧  |  ⌃  |     |  |  ⌫  |  ⌃  | ⇧ ␣ |  ⇞  |  ⇟  |
  *                   `-----------------------------'  `-----------------------------'
  */
-[MOVE] = LAYOUT(
+[_MV] = LAYOUT(
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,                           KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
+    KC_NO, KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_DEL,                           KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, KC_NO, KC_ENT, KC_HOME, KC_END, KC_TRNS, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_LCTL, RSFT_T(KC_SPC), KC_PGUP, KC_PGDN),
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_LCTL, S_SPC, KC_PGUP, KC_PGDN),
 
 /*
  * Keymap 4: Functions
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     | F1  | F2  | F3  | F4  | F5  |                          |Clmk |Qwrty|     | Nix | Mac |     |
+ * |     | F1  | F2  | F3  | F4  | F5  |                          |Clmk |Qwrty| Nix | Mac |     |     |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
- * |     | Ctrl| LGui| LAlt| Shft|     |                          |BriUp|VolUp|     |     |     |     |
+ * |     |  ⌃  |  ⌥  |  ⌘  |  ⇧  |     |                          |BriUp|VolUp|     |     |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
  * |     | F6  | F7  | F8  | F9  | F10 | F11 | F12 |  |     |     |BriDn|VolDn|     |     |     |     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
- *                   |     |     |     |     |     |  |     |     |     |     |     |
+ *                   |     |     |     |     |     |  |     |     |     |     |#####|
  *                   `-----------------------------'  `-----------------------------'
  */
-[FUN] = LAYOUT(
-    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   DF(COLEMAK), DF(QWERTY), KC_NO, AG_NORM, AG_SWAP, KC_NO,
+[_FN] = LAYOUT(
+    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   CLMK,    QWTY,    NIX,  MAC, KC_NO, KC_NO,
     KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                           KC_BRIU, KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,    KC_NO, KC_NO, KC_BRID, KC_VOLD, KC_TRNS, KC_NO, KC_NO, KC_NO,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS),
