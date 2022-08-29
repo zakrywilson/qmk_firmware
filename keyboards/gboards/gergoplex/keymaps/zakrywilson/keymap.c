@@ -91,22 +91,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 3: Movement
  *
  * ,-----------------------------.     ,-----------------------------.
- * |     |     |     |     |     |     |     |     | Up  |     | PgUp|
+ * | F1  | F2  | F3  | F4  | F5  |     |     |     | Up  |     | PgUp|
  * |-----+-----+-----+-----+-----|     |-----------------------------|
  * | Ctl | OS  | Alt | Sft | Del |     | Bspc| Left| Dwn | Rght| PgDn|
  * |-----+-----+-----+-----+-----+     |-----------------------------|
- * |     |     |     |     |     |     |     | Ent | Home| End | ### |
+ * | F6  | F7  | F8  | F9  | F10 |     |     | Ent | Home| End | ### |
  * `-----+-----+-----+-----+-----'     `-----------------------------'
  *      .------------------------.     .------------------------.
- *      | Trns | S_T(Spc) | Ctrl |     | NUM  | S_T(Spc) | FN   |
+ *      | F11  | S_T(Spc) | F12  |     | NUM  | S_T(Spc) | FN   |
  *      '------------------------'     '------------------------'
  */
 [MV] = LAYOUT_split_3x5_3(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_PGUP,
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,     KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_PGUP,
     KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_DEL,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_ENT,  KC_HOME, KC_END,  KC_TRNS,
+    KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,    KC_NO,   KC_ENT,  KC_HOME, KC_END,  KC_TRNS,
 
-    _______, LSFT_T(KC_SPC), KC_LCTL,              MO(NUM), RSFT_T(KC_SPC), MO(FN)
+    KC_F11,  LSFT_T(KC_SPC), KC_F12,               MO(NUM), RSFT_T(KC_SPC), MO(FN)
     ),
 /* Keymap 3: Number pad
  *
@@ -131,21 +131,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 4: Functions & Settings
  *
  * ,-----------------------------.     ,-----------------------------.
- * | F1  | F2  | F3  | F4  | F5  |     |DF(1)|DF(2)|     |AGSwp|AGNrm| // 1=Colemak, 2=Qwerty
+ * |     |     |     |     |     |     |DF(1)|DF(2)|     |AGSwp|AGNrm| // 1=Colemak, 2=Qwerty
  * |-----+-----+-----+-----+-----|     |-----------------------------|
- * | Ctl | OS  | Alt | Sft |     |     | BriU| VolU| Mute|     |     |
+ * |     |     |     |     |     |     | BriU| VolU| Mute|     |     |
  * |-----+-----+-----+-----+-----+     |-----------------------------|
- * | F6  | F7  | F8  | F9  | F10 |     | BriD| VolD| MPly|     |     |
- * `-----+-----+-----+-----+-----'     `-----------------------------'
+ * |     |     |     |     |     |     | BriD| VolD| MPly|     |     |
+ * `-----------------------------'     `-----------------------------'
  *      .------------------------.     .------------------------.
- *      | F11  | S_T(Spc) | F12  |     | Ctl  |   Sft    | #### |
+ *      |       |        |       |     | Ctl  |   Sft    | #### |
  *      '------------------------'     '------------------------'
  */
 [FN] = LAYOUT_split_3x5_3(
-    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,     DF(QWERTY), DF(COLEMAK), KC_NO,   AG_SWAP, AG_NORM,
-    KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_NO,     KC_BRIU,    KC_VOLU,     KC_MUTE, KC_NO,   KC_NO,
-    KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,    KC_BRID,    KC_VOLD,     KC_MPLY, KC_NO,   KC_NO,
+    _______, _______, _______, _______, _______,    DF(QWERTY), DF(COLEMAK), KC_NO,   AG_SWAP, AG_NORM,
+    _______, _______, _______, _______, _______,    KC_BRIU,    KC_VOLU,     KC_MUTE, KC_NO,   KC_NO,
+    _______, _______, _______, _______, _______,    KC_BRID,    KC_VOLD,     KC_MPLY, KC_NO,   KC_NO,
 
-    KC_F11,  KC_LSFT, KC_F12,                      KC_RCTL, KC_RSFT, KC_TRNS
+    _______, _______, _______,                      KC_RCTL, KC_RSFT, KC_TRNS
     )
 };
