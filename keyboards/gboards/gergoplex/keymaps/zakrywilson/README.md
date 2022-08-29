@@ -101,5 +101,5 @@ xclip -sel clip $output_file
 ### Mac
 
 ```sh
-rg "\* " --glob $input_file | cut -c 12- | pbcopy
+rg "\* " --glob keymap.c | cut -c 12- | pbcopy
 ```
