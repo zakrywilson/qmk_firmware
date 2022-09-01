@@ -81,10 +81,7 @@ make splitkb/kyria/rev1:zakrywilson:flash
 ### Mac
 
 ```sh
-output_file="ascii_keymap.txt"
-
-rg "\* " --glob keymap.c | cut -c 12- > $output_file
-pbcopy < $output_file
+rg "\* " --glob keymap.c | cut -c 13- | pbcopy
 ```
 
 ### Linux
