@@ -16,6 +16,10 @@
 
 #pragma once
 
+#ifdef OLED_ENABLE
+  #define OLED_DISPLAY_128X64
+#endif
+
 #define MASTER_RIGHT
 #define TAPPING_TERM 200
 #define TAPPING_TOGGLE 3
