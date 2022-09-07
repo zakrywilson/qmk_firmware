@@ -13,6 +13,7 @@ enum layers {
 
 // Custom keys
 #define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
+#define LOCK     LCMD(LCTL(KC_Q)) // Lock Mac
 #define MAC      AG_NORM          // Unswap Alt/Opt and Gui/Cmd to work for Mac (default)
 #define MOD_LCMD MOD_LGUI         // Alias for MOD_LGUI
 #define MOD_LOPT MOD_LALT         // Alias for MOD_LALT
@@ -185,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 4: Functions
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     | F1  | F2  | F3  | F4  | F5  |                          |Clmk |Qwrty| Nix | Mac |     |     |
+ * |     | F1  | F2  | F3  | F4  | F5  |                          |Clmk |Qwrty| Nix | Mac |     | Lock|
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * |     |  ⌃  |  ⌥  |  ⌘  |  ⇧  |     |                          |BriUp|VolUp| Mute|     |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
@@ -195,7 +196,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `-----------------------------'  `-----------------------------'
  */
 [_FN] = LAYOUT(
-    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   CLMK,    QWTY,    NIX,  MAC, KC_NO, KC_NO,
+    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                   CLMK,    QWTY,    NIX,  MAC,      KC_NO, LOCK,
     KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                           KC_BRIU, KC_VOLU, KC_MUTE, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,    KC_NO, KC_NO, KC_BRID, KC_VOLD, KC_MPLY, KC_NO, KC_NO, KC_NO,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS),
