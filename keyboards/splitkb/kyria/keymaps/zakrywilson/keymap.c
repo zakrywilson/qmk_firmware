@@ -20,6 +20,8 @@ enum layers {
 #define NIX      AG_SWAP          // Swap Alt/Opt and Gui/Cmd to work for Linux
 #define QWTY     DF(_QWERTY)      // Set the base (default) layer to QWERTY
 #define S_SPC    LSFT_T(KC_SPC)   // Shift if held, space if tapped
+#define DEL_WD   LOPT(KC_BSPC)    // Delete a word (backwards)
+#define DEL_LN   LCMD(KC_BSPC)    // Delete a line (backwards)
 
 #ifdef COMBO_ENABLE
 
@@ -164,20 +166,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Keymap 3: Movement
  *
  * ,-----------------------------------.                          ,-----------------------------------.
- * |     |     |     |     |     |     |                          |     |     |  ↑  |     |     |     |
+ * |     |     |     |     |     |     |                          | ⌘(⌫)|     |  ↑  |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                          |-----+-----+-----+-----+-----+-----|
  * |     |  ⌃  |  ⌥  |  ⌘  |  ⇧  |  ⌦  |                          |  ⌫  |  ←  |  ↓  |  →  |     |     |
  * |-----+-----+-----+-----+-----+-----+-----------.  ,-----------+-----+-----+-----+-----+-----+-----|
- * |     |     |     |     |     |     |     |     |  |  ⌦  |  ⌅  |     |  ⌅  |  ↖  |  ↘  |#####|     |
+ * |     |     |     |     |     |     |     |     |  |  ⌦  |  ⌅  | ⌥(⌫)|  ⌅  |  ↖  |  ↘  |#####|     |
  * `-----------------+-----+-----+-----+-----+-----|  |-----+-----+-----+-----+-----+-----------------'
  *                   |  ⌥  |  ⌘  |  ⇧  |  ⌃  |     |  |  ⌫  |  ⌃  | ⇧ ␣ |  ⇞  |  ⇟  |
  *                   `-----------------------------'  `-----------------------------'
  */
 [_MV] = LAYOUT(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                                    DEL_LN,  KC_NO, KC_UP, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_DEL,                           KC_BSPC, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, KC_NO,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, KC_NO, KC_ENT, KC_HOME, KC_END, KC_TRNS, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_LCTL, S_SPC, KC_PGUP, KC_PGDN),
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_TRNS, KC_TRNS, DEL_WD,  KC_ENT, KC_HOME, KC_END, KC_TRNS, KC_NO,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,                 KC_BSPC, KC_LCTL, S_SPC,   KC_PGUP, KC_PGDN),
 
 /*
  * Keymap 4: Functions
