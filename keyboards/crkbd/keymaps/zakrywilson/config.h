@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 #ifdef COMBO_ENABLE
-  #define COMBO_COUNT 24
+  #define COMBO_COUNT 25
 #endif
 
 //#define TAPPING_FORCE_HOLD
