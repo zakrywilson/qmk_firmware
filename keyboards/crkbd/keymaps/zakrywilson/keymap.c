@@ -14,6 +14,8 @@ enum layers {
 
 #define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
 #define CTL_CLN  LCTL_T(KC_COLON) // Left Opt when held, : when tapped
+#define DEL_LN   LCMD(KC_BSPC)    // Delete a line (backwards)
+#define DEL_WD   LOPT(KC_BSPC)    // Delete a word (backwards)
 #define FN       MO(_FN)          // Momentarily turn on function layer when pressed
 #define MAC      AG_NORM          // Unswap Alt / Opt and Gui / Cmd to work for Mac (default)
 #define MV_SLSH  LT(_MV, KC_SLSH) // Turn on layer when held, kc when tapped
@@ -155,11 +157,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MV] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,   KC_UP, XXXXXXX, KC_PGUP, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_LN, XXXXXXX,   KC_UP, XXXXXXX, KC_PGUP, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT,  KC_DEL,                      KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_ENT, KC_HOME,  KC_END, KC_TRNS, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_WD,  KC_ENT, KC_HOME,  KC_END, KC_TRNS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______,   S_SPC, KC_LCTL,        NUM,   S_SPC,      FN
                                       //`--------------------------'  `--------------------------'
