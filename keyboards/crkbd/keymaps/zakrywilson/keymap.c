@@ -198,32 +198,52 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   return rotation;
 }
 
-#define L_BASE 0
-#define L_LOWER 2
-#define L_RAISE 4
-#define L_ADJUST 8
-
-void oled_render_layer_state(void) {
-  oled_write_P(PSTR("Layer: "), false);
-  switch (layer_state) {
-    case L_BASE:
-      oled_write_ln_P(PSTR("Default"), false);
-      break;
-    case L_LOWER:
-      oled_write_ln_P(PSTR("Lower"), false);
-      break;
-    case L_RAISE:
-      oled_write_ln_P(PSTR("Raise"), false);
-      break;
-    case L_ADJUST:
-    case L_ADJUST|L_LOWER:
-    case L_ADJUST|L_RAISE:
-    case L_ADJUST|L_LOWER|L_RAISE:
-      oled_write_ln_P(PSTR("Adjust"), false);
-      break;
+void oled_render_system_state(void) {
+  oled_write_P(PSTR("System: "), false);
+  if (keymap_config.swap_lalt_lgui) {
+    oled_write_ln_P(PSTR("Linux"), false);
+  } else {
+    oled_write_ln_P(PSTR("Mac"), false);
   }
 }
 
+void oled_render_layout_state(void) {
+  oled_write_P(PSTR("Layout: "), false);
+  switch (get_highest_layer(default_layer_state)) {
+    case _COLEMAK:
+      oled_write_ln_P(PSTR("Colemak"), false);
+      break;
+    case _QWERTY:
+      oled_write_ln_P(PSTR("Qwerty"), false);
+      break;
+    default:
+      oled_write_P(PSTR("Undefined"), false);
+  }
+}
+
+void oled_render_layer_state(void) {
+  oled_write_P(PSTR("Layer: "), false);
+  switch (get_highest_layer(layer_state)) {
+    case _COLEMAK:
+    case _QWERTY:
+      oled_write_ln_P(PSTR("Base"), false);
+      break;
+    case _SYM:
+      oled_write_ln_P(PSTR("Symbol"), false);
+      break;
+    case _MV:
+      oled_write_ln_P(PSTR("Navigation"), false);
+      break;
+    case _NUM:
+      oled_write_ln_P(PSTR("Numpad"), false);
+      break;
+    case _FN:
+      oled_write_ln_P(PSTR("Function"), false);
+      break;
+    default:
+      oled_write_ln_P(PSTR("Undefined"), false);
+  }
+}
 
 char keylog_str[24] = {};
 
@@ -243,7 +263,7 @@ void set_keylog(uint16_t keycode, keyrecord_t *record) {
     name = code_to_name[keycode];
   }
 
-  // update keylog
+  // Update keylog
   snprintf(keylog_str, sizeof(keylog_str), "%dx%d, k%2d : %c",
       record->event.key.row, record->event.key.col,
       keycode, name);
@@ -279,6 +299,8 @@ void oled_render_logo(void) {
 
 bool oled_task_user(void) {
   if (is_keyboard_master()) {
+    oled_render_system_state();
+    oled_render_layout_state();
     oled_render_layer_state();
     oled_render_keylog();
   } else {
