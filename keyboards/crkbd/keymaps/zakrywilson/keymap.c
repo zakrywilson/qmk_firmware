@@ -14,7 +14,6 @@ enum layers {
 
 #define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
 #define CTL_CLN  LCTL_T(KC_COLON) // Left Opt when held, : when tapped
-#define CTL_ESC  LCTL_T(KC_ESC)   // Left control if held, escape if tapped
 #define DEL_LN   LCMD(KC_BSPC)    // Delete a line (backwards)
 #define DEL_WD   LOPT(KC_BSPC)    // Delete a word (backwards)
 #define FN       MO(_FN)          // Momentarily turn on function layer when pressed
@@ -129,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD, KC_LSFT, CTL_ESC,        SYM,  KC_SPC, KC_LOPT
+                                          KC_LCMD, KC_LSFT, KC_LCTL,        SYM,  KC_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -141,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD, KC_LSFT, CTL_ESC,        SYM,  KC_SPC, KC_LOPT
+                                          KC_LCMD, KC_LSFT, KC_LCTL,        SYM,  KC_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
