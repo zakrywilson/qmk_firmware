@@ -14,9 +14,11 @@ enum layers {
 
 #define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
 #define CTL_CLN  LCTL_T(KC_COLON) // Left Opt when held, : when tapped
+#define CTL_ESC  LCTL_T(KC_ESC)   // Left control if held, escape if tapped
 #define DEL_LN   LCMD(KC_BSPC)    // Delete a line (backwards)
 #define DEL_WD   LOPT(KC_BSPC)    // Delete a word (backwards)
 #define FN       MO(_FN)          // Momentarily turn on function layer when pressed
+#define LOCK     LCMD(LCTL(KC_Q)) // Lock Mac
 #define MAC      AG_NORM          // Unswap Alt / Opt and Gui / Cmd to work for Mac (default)
 #define MV_SLSH  LT(_MV, KC_SLSH) // Turn on layer when held, kc when tapped
 #define NIX      AG_SWAP          // Swap Alt / Opt and Gui / Cmd to work for Linux
@@ -127,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD, KC_LSFT, KC_LCTL,        SYM,  KC_SPC, KC_LOPT
+                                          KC_LCMD, KC_LSFT, CTL_ESC,        SYM,  KC_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -139,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD, KC_LSFT, KC_LCTL,        SYM,  KC_SPC, KC_LOPT
+                                          KC_LCMD, KC_LSFT, CTL_ESC,        SYM,  KC_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -157,11 +159,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MV] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_LN, XXXXXXX,   KC_UP, XXXXXXX, KC_PGUP, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_LN, KC_HOME,   KC_UP,  KC_END, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT,  KC_DEL,                      KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
+      XXXXXXX, KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT,  KC_DEL,                      KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_WD,  KC_ENT, KC_HOME,  KC_END, KC_TRNS, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_WD,  KC_ENT, KC_PGUP, KC_PGDN, KC_TRNS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______,   S_SPC, KC_LCTL,        NUM,   S_SPC,      FN
                                       //`--------------------------'  `--------------------------'
@@ -181,7 +183,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FN] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                         CLMK,    QWTY, XXXXXXX,     MAC,     NIX, XXXXXXX,
+      XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                         CLMK,    QWTY,     MAC,     NIX,    LOCK, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, _______, _______, _______, _______, _______,                      KC_BRIU, KC_VOLU, KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
