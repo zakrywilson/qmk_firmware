@@ -22,6 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MASTER_RIGHT
 
+#define TAPPING_TERM 250
+
 #ifdef COMBO_ENABLE
   #define COMBO_COUNT 25
 #endif
