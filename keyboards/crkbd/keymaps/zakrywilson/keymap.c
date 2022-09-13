@@ -202,7 +202,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 void oled_render_system_state(void) {
-  oled_write_P(PSTR("System   | "), false);
+  oled_write_P(PSTR("System  |  "), false);
   if (keymap_config.swap_lalt_lgui) {
     oled_write_ln_P(PSTR("Linux"), false);
   } else {
@@ -211,7 +211,7 @@ void oled_render_system_state(void) {
 }
 
 void oled_render_layout_state(void) {
-  oled_write_P(PSTR("Layout   | "), false);
+  oled_write_P(PSTR("Layout  |  "), false);
   switch (get_highest_layer(default_layer_state)) {
     case _COLEMAK:
       oled_write_ln_P(PSTR("Colemak"), false);
@@ -225,7 +225,7 @@ void oled_render_layout_state(void) {
 }
 
 void oled_render_layer_state(void) {
-  oled_write_P(PSTR("Layer    | "), false);
+  oled_write_P(PSTR("Layer   |  "), false);
   switch (get_highest_layer(layer_state)) {
     case _COLEMAK:
     case _QWERTY:
