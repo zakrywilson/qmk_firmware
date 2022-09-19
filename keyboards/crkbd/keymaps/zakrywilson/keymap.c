@@ -27,6 +27,7 @@ enum layers {
 #define OPT_Z    LOPT_T(KC_Z)     // Left Opt when held, Z when tapped
 #define QWTY     DF(_QWERTY)      // Set the base (default) layer to QWERTY
 #define SYM      TT(_SYM)         // Normally acts like MO unless it's tapped multiple times, which toggles layer on
+#define CTL_SPC  LCTL_T(KC_SPC)   // Left Ctrl when held, space when tapped
 #define S_SPC    LSFT_T(KC_SPC)   // Shift if held, space if tapped
 
 #ifdef COMBO_ENABLE
@@ -128,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD, KC_LSFT, KC_LCTL,        SYM,  KC_SPC, KC_LOPT
+                                          KC_LCMD, KC_LCMD, KC_LSFT,        SYM, CTL_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -140,19 +141,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD, KC_LSFT, KC_LCTL,        SYM,  KC_SPC, KC_LOPT
+                                          KC_LCMD, KC_LCMD, KC_LSFT,        SYM, CTL_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,  KC_TAB,    KC_7,    KC_8,    KC_9,KC_COMMA,                      XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN,KC_COLON, XXXXXXX,
+      XXXXXXX,  KC_TAB,    KC_7,    KC_8,    KC_9,KC_COMMA,                      KC_TILD, KC_UNDS, KC_LPRN, KC_RPRN,KC_COLON, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                       KC_GRV, KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, OPT_ENT,    KC_1,    KC_2,    KC_3,KC_COLON,                      KC_BSLS,  KC_EQL,   KC_LT,   KC_GT, KC_TRNS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______,   S_SPC, KC_LCTL,    KC_TRNS,   S_SPC, _______
+                                          _______, _______,   S_SPC,    KC_TRNS,   S_SPC, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -164,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_WD,  KC_ENT, KC_PGUP, KC_PGDN, KC_TRNS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______,   S_SPC, KC_LCTL,        NUM,   S_SPC,      FN
+                                          _______, _______,   S_SPC,        NUM,   S_SPC,      FN
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -176,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|--------|
       XXXXXXX, _______, _______, _______, _______, _______,                       KC_ENT,    KC_1,    KC_2,    KC_3,OPT_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCMD,   S_SPC, KC_LCTL,        SYM,   S_SPC, KC_LOPT
+                                          KC_LCMD, _______,   S_SPC,        SYM,   S_SPC, KC_LOPT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -188,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_BRID, KC_VOLD, KC_MPLY, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_F11,   S_SPC,  KC_F12,    KC_LCTL, KC_LSFT, KC_TRNS
+                                           KC_F11,  KC_F12, KC_LSFT,    KC_LCTL, KC_LSFT, KC_TRNS
                                       //`--------------------------'  `--------------------------'
   ),
 };
