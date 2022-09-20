@@ -15,6 +15,7 @@ enum layers {
 #define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
 #define CTL_0    LCTL_T(KC_0)     // Left Ctrl when held, 0 when tapped
 #define CTL_CLN  LCTL_T(KC_COLON) // Left Opt when held, : when tapped
+#define CTL_SPC  LCTL_T(KC_SPC)   // Left Ctrl when held, space when tapped
 #define DEL_LN   LCMD(KC_BSPC)    // Delete a line (backwards)
 #define DEL_WD   LOPT(KC_BSPC)    // Delete a word (backwards)
 #define FN       MO(_FN)          // Momentarily turn on function layer when pressed
@@ -28,7 +29,6 @@ enum layers {
 #define OPT_Z    LOPT_T(KC_Z)     // Left Opt when held, Z when tapped
 #define QWTY     DF(_QWERTY)      // Set the base (default) layer to QWERTY
 #define SYM      TT(_SYM)         // Normally acts like MO unless it's tapped multiple times, which toggles layer on
-#define CTL_SPC  LCTL_T(KC_SPC)   // Left Ctrl when held, space when tapped
 #define S_SPC    LSFT_T(KC_SPC)   // Shift if held, space if tapped
 
 #ifdef COMBO_ENABLE
