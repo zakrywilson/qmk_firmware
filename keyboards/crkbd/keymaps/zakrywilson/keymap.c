@@ -61,9 +61,10 @@ enum combos {
   // Experimental
   T_V__ESC,
   V_B__GRV,
-  H_K__PLUS,
-  N_M__MINS,
-  E_COMM__EQL,
+  H_K__GRV,
+  N_M__PLUS,
+  E_COMM__MINS,
+  I_DOT__EQL,
   Y_SCLN_COLON
 };
 
@@ -91,6 +92,7 @@ const uint16_t PROGMEM v_b__combo[]    = {KC_V,    KC_B,    COMBO_END};
 const uint16_t PROGMEM h_k__combo[]    = {KC_H,    KC_K,    COMBO_END};
 const uint16_t PROGMEM n_m__combo[]    = {KC_N,    KC_M,    COMBO_END};
 const uint16_t PROGMEM e_comm_combo[]  = {KC_E,    KC_COMM, COMBO_END};
+const uint16_t PROGMEM i_dot_combo[]   = {KC_I,    KC_DOT,  COMBO_END};
 const uint16_t PROGMEM y_scln__combo[] = {KC_Y,    KC_SCLN, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -115,9 +117,10 @@ combo_t key_combos[COMBO_COUNT] = {
   [D_B__SPC]     = COMBO(d_b__combo,    KC_SPC),
   [T_V__ESC]     = COMBO(t_v__combo,    KC_ESC),
   [V_B__GRV]     = COMBO(v_b__combo,    KC_GRV),
-  [H_K__PLUS]    = COMBO(h_k__combo,    KC_PLUS),
-  [N_M__MINS]    = COMBO(n_m__combo,    KC_MINS),
-  [E_COMM__EQL]  = COMBO(e_comm_combo,  KC_EQL),
+  [H_K__GRV]     = COMBO(h_k__combo,    KC_GRV),
+  [N_M__PLUS]    = COMBO(n_m__combo,    KC_PLUS),
+  [E_COMM__MINS] = COMBO(e_comm_combo,  KC_MINS),
+  [I_DOT__EQL]   = COMBO(i_dot_combo,   KC_EQL),
   [Y_SCLN_COLON] = COMBO(y_scln__combo, KC_COLON),
 };
 

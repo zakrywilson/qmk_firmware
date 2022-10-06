@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IGNORE_MOD_TAP_INTERRUPT
 
 #ifdef COMBO_ENABLE
-  #define COMBO_COUNT 25
+  #define COMBO_COUNT 26
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
