@@ -13,6 +13,8 @@ enum layers {
 };
 
 #define CLMK     DF(_COLEMAK)     // Set the base (default) layer to Colemak (default)
+#define CMD_0    LCMD_T(KC_0)     // Left Cmd when held, 0 when tapped
+#define CMD_ESC  LCMD_T(KC_ESC)   // Left Cmd when held, esc when tapped
 #define CTL_0    LCTL_T(KC_0)     // Left Ctrl when held, 0 when tapped
 #define CTL_CLN  LCTL_T(KC_COLON) // Left Opt when held, : when tapped
 #define CTL_SPC  LCTL_T(KC_SPC)   // Left Ctrl when held, space when tapped
@@ -130,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_LSFT, KC_LCMD,        SYM, CTL_SPC, XXXXXXX
+                                          XXXXXXX, KC_LSFT, CMD_ESC,        SYM, CTL_SPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -142,19 +144,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   OPT_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, MV_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_LSFT, KC_LCMD,        SYM, CTL_SPC, XXXXXXX
+                                          XXXXXXX, KC_LSFT, CMD_ESC,        SYM, CTL_SPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,  KC_TAB,    KC_7,    KC_8,    KC_9,KC_COMMA,                      KC_TILD, KC_UNDS, KC_LPRN, KC_RPRN,KC_COLON, XXXXXXX,
+      XXXXXXX,  KC_TAB,    KC_7,    KC_8,    KC_9,KC_COMMA,                      KC_TILD,  KC_EQL, KC_LPRN, KC_RPRN,KC_COLON, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,   CTL_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                       KC_GRV, KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, OPT_ENT,    KC_1,    KC_2,    KC_3,KC_COLON,                      KC_BSLS,  KC_EQL,   KC_LT,   KC_GT, KC_TRNS, XXXXXXX,
+      XXXXXXX, OPT_ENT,    KC_1,    KC_2,    KC_3,KC_COLON,                      KC_BSLS, KC_UNDS,   KC_LT,   KC_GT, KC_TRNS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   S_SPC, _______,    KC_TRNS, KC_LCTL, XXXXXXX
+                                          XXXXXXX,   S_SPC,   CMD_0,    KC_TRNS, KC_LCTL, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -166,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       DEL_WD,  KC_ENT, KC_PGUP, KC_PGDN, KC_TRNS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   S_SPC, _______,        NUM,   S_SPC, XXXXXXX
+                                          XXXXXXX,   S_SPC, KC_LCMD,        NUM,   S_SPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -178,7 +180,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|--------|
       XXXXXXX, _______, _______, _______, _______, _______,                       KC_ENT,    KC_1,    KC_2,    KC_3,OPT_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,   S_SPC, _______,        SYM,   S_SPC, XXXXXXX
+                                          XXXXXXX,   S_SPC, KC_LCMD,        SYM,   S_SPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
