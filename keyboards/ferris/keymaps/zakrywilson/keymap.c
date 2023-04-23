@@ -22,6 +22,61 @@ enum ferris_layers {
 #define MAC      AG_NORM           // Unswap Alt & Opt and Gui & Cmd to work for Mac (default)
 #define NIX      AG_SWAP           // Swap Alt & Opt and Gui & Cmd to work for Linux
 
+
+enum combos {
+  Q_A__EXLM,
+  W_R__AT,
+  F_S__HASH,
+  P_T__DLR,
+  G_D__PERC,
+  J_H__CIRC,
+  L_N__AMPR,
+  U_E__ASTR,
+  Y_I__LPRN,
+  SCLN_O__RPRN,
+
+  X_C__STAB,
+  C_V__TAB,
+  M_COMM__ENT,
+
+  COMBO_LENGTH
+};
+
+uint16_t COMBO_LEN = COMBO_LENGTH;
+
+const uint16_t PROGMEM q_a[] = {KC_Q, KC_A, COMBO_END};
+const uint16_t PROGMEM w_r[] = {KC_W, KC_R, COMBO_END};
+const uint16_t PROGMEM f_s[] = {KC_F, KC_S, COMBO_END};
+const uint16_t PROGMEM p_t[] = {KC_P, KC_T, COMBO_END};
+const uint16_t PROGMEM g_d[] = {KC_G, KC_D, COMBO_END};
+const uint16_t PROGMEM j_h[] = {KC_J, KC_H, COMBO_END};
+const uint16_t PROGMEM l_n[] = {KC_L, KC_N, COMBO_END};
+const uint16_t PROGMEM u_e[] = {KC_U, KC_E, COMBO_END};
+const uint16_t PROGMEM y_i[] = {KC_Y, KC_I, COMBO_END};
+const uint16_t PROGMEM scln_o[] = {KC_SCLN, KC_O, COMBO_END};
+
+const uint16_t PROGMEM x_c[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM c_v[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM m_comm[] = {KC_M, KC_COMM, COMBO_END};
+
+combo_t key_combos[] = {
+  [Q_A__EXLM] = COMBO(q_a, KC_EXLM),
+  [W_R__AT] = COMBO(w_r, KC_AT),
+  [F_S__HASH] = COMBO(f_s, KC_HASH),
+  [P_T__DLR] = COMBO(p_t, KC_DLR),
+  [G_D__PERC] = COMBO(g_d, KC_PERC),
+  [J_H__CIRC] = COMBO(j_h, KC_CIRC),
+  [L_N__AMPR] = COMBO(l_n, KC_AMPR),
+  [U_E__ASTR] = COMBO(u_e, KC_ASTR),
+  [Y_I__LPRN] = COMBO(y_i, KC_LPRN),
+  [SCLN_O__RPRN] = COMBO(scln_o, KC_RPRN),
+
+  [X_C__STAB] = COMBO(x_c, S(KC_TAB)),
+  [C_V__TAB] = COMBO(c_v, KC_TAB),
+  [M_COMM__ENT] = COMBO(m_comm, KC_ENT),
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
     KC_Q,  KC_W, KC_F, KC_P, KC_G,    KC_J, KC_L, KC_U,    KC_Y,   KC_SCLN,
