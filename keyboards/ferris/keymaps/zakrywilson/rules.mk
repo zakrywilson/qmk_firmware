@@ -1,1 +1,2 @@
 BOOTLOADER = caterina
+COMBO_ENABLE = yes
