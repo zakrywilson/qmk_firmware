@@ -24,6 +24,7 @@ enum ferris_layers {
 
 
 enum combos {
+  // Top row
   Q_A__EXLM,
   W_R__AT,
   F_S__HASH,
@@ -34,16 +35,21 @@ enum combos {
   U_E__ASTR,
   Y_I__LPRN,
   SCLN_O__RPRN,
-
+  // Left hand
   X_C__STAB,
   C_V__TAB,
+  P_G__DEL,
+  T_D__BSPC,
+  V_B__ENT,
+  // Right hand hand
   M_COMM__ENT,
-
+  // Length
   COMBO_LENGTH
 };
 
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
+// Top row
 const uint16_t PROGMEM q_a[] = {KC_Q, KC_A, COMBO_END};
 const uint16_t PROGMEM w_r[] = {KC_W, KC_R, COMBO_END};
 const uint16_t PROGMEM f_s[] = {KC_F, KC_S, COMBO_END};
@@ -54,12 +60,17 @@ const uint16_t PROGMEM l_n[] = {KC_L, KC_N, COMBO_END};
 const uint16_t PROGMEM u_e[] = {KC_U, KC_E, COMBO_END};
 const uint16_t PROGMEM y_i[] = {KC_Y, KC_I, COMBO_END};
 const uint16_t PROGMEM scln_o[] = {KC_SCLN, KC_O, COMBO_END};
-
+// Left hand
 const uint16_t PROGMEM x_c[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM c_v[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM p_g[] = {KC_P, KC_G, COMBO_END};
+const uint16_t PROGMEM t_d[] = {KC_T, KC_D, COMBO_END};
+const uint16_t PROGMEM v_b[] = {KC_V, KC_B, COMBO_END};
+// Right hand
 const uint16_t PROGMEM m_comm[] = {KC_M, KC_COMM, COMBO_END};
 
 combo_t key_combos[] = {
+  // Top row
   [Q_A__EXLM] = COMBO(q_a, KC_EXLM),
   [W_R__AT] = COMBO(w_r, KC_AT),
   [F_S__HASH] = COMBO(f_s, KC_HASH),
@@ -70,9 +81,13 @@ combo_t key_combos[] = {
   [U_E__ASTR] = COMBO(u_e, KC_ASTR),
   [Y_I__LPRN] = COMBO(y_i, KC_LPRN),
   [SCLN_O__RPRN] = COMBO(scln_o, KC_RPRN),
-
+  // Left hand
   [X_C__STAB] = COMBO(x_c, S(KC_TAB)),
   [C_V__TAB] = COMBO(c_v, KC_TAB),
+  [P_G__DEL] = COMBO(p_g, KC_DEL),
+  [T_D__BSPC] = COMBO(t_d, KC_BSPC),
+  [V_B__ENT] = COMBO(v_b, KC_ENT),
+  // Right hand
   [M_COMM__ENT] = COMBO(m_comm, KC_ENT),
 };
 
