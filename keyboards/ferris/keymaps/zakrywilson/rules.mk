@@ -1,5 +1,6 @@
 BOOTLOADER = caterina
 COMBO_ENABLE = yes
+TAP_DANCE_ENABLE = yes
 
 # Reducing footprint
 # https://docs.qmk.fm/#/squeezing_avr
