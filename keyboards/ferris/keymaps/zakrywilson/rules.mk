@@ -5,6 +5,7 @@ F_CPU = 16000000
 CONVERT_TO=promicro_rp2040
 
 COMBO_ENABLE = yes
+DYNAMIC_TAPPING_TERM_ENABLE = yes
 MAGIC_ENABLE = yes  # required for Alt/Ctrl swapping
 TAP_DANCE_ENABLE = yes
 
