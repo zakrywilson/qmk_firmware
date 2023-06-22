@@ -117,9 +117,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_NAV] = LAYOUT(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_HOME, KC_UP,   KC_END,  MAC,
-    KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_DEL,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, NIX,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_ENT,  KC_PGUP, KC_PGDN, KC_TRNS,
+    DT_UP,   DT_DOWN, DT_PRNT, MAC,     NIX,       KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_PGUP,
+    KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_DEL,    KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,   KC_ENT,  KC_HOME, KC_END,  KC_TRNS,
                               SFT_SPC, KC_LCMD,    NUM, CTL_SPC
 
   ),
@@ -142,4 +142,14 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     default:
       return false;
   }
+}
+
+// Turn off power LED
+// https://docs.splitkb.com/hc/en-us/articles/5799711553820-Power-LED
+void keyboard_pre_init_user(void) {
+  // Set our LED pin as output
+  setPinOutput(24);
+  // Turn the LED off
+  // (Due to technical reasons, high is off and low is on)
+  writePinHigh(24);
 }
