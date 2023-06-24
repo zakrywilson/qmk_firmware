@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM_PER_KEY
 #define PERMISSIVE_HOLD
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
-#define IGNORE_MOD_TAP_INTERRUPT
 
 // Bootloader double tap
 // https://github.com/qmk/qmk_firmware/blob/master/docs/platformdev_rp2040.md#double-tap-reset-boot-loader-entry-iddouble-tap
