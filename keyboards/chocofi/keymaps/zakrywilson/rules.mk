@@ -22,7 +22,8 @@
 # instance, hitting A and B within the combo term would hit ESC instead, or have
 # it perform even more complex tasks.
 # TODO: Copy over combos
-# COMBO_ENABLE = yes
+VPATH += keyboards/gboards
+COMBO_ENABLE = yes
 
 # Magic
 # Required for Alt/Ctrl swapping
