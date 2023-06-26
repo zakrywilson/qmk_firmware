@@ -1,0 +1,35 @@
+// Chocofi combos
+// Source: https://github.com/qmk/qmk_firmware/blob/master/docs/feature_combo.md#dictionary-management
+
+// Alternate reference layers by layer
+/* COMBO_REF_LAYER(0, 2)  // reference the BASE layer for NAV. */
+// TODO: Also have _NUM reference _BASE -- do we duplicate the line above?
+
+// Combos
+// Defined in combos.def
+// Source: https://github.com/qmk/qmk_firmware/blob/master/docs/feature_combo.md#dictionary-management
+COMBO_REF_LAYER(3, 3)  // FN layer references itself
+DEFAULT_REF_LAYER(0)   // Default layer is BASE
+
+// --------------------------------------------------
+// | NAME           | OUTPUT    | INPUTS            |
+// --------------------------------------------------
+// Top row (shifted number row)
+COMB(Q_A__EXLM,       KC_EXLM,    KC_Q,      KC_A)
+COMB(W_R__AT,         KC_AT,      KC_W,      KC_R)
+COMB(F_S__HASH,       KC_HASH,    KC_F,      KC_S)
+COMB(P_T__DLR,        KC_DLR,     KC_P,      KC_T)
+COMB(G_D__PERC,       KC_PERC,    KC_G,      KC_D)
+COMB(J_H__CIRC,       KC_CIRC,    KC_J,      KC_H)
+COMB(L_N__AMPR,       KC_AMPR,    KC_L,      KC_N)
+COMB(U_E__ASTR,       KC_ASTR,    KC_U,      KC_E)
+COMB(Y_I__LPRN,       KC_LPRN,    KC_Y,      KC_I)
+COMB(SCLN_O__RPRN,    KC_RPRN,    KC_SCLN,   KC_O)
+// Left hand
+COMB(P_G__DEL,        KC_DEL,     KC_P,      KC_G)
+COMB(T_D__BSPC,       KC_BSPC,    KC_T,      KC_D)
+COMB(X_C__S_TAB,      S(KC_TAB),  KC_X,      KC_C)
+COMB(C_V__TAB,        KC_TAB,     KC_C,      KC_V)
+COMB(V_B__ENT,        KC_ENT,     KC_V,      KC_B)
+// Right hand
+COMB(M_COMM__ENT,     KC_ENT,     KC_M,      KC_COMM)
