@@ -18,7 +18,7 @@ enum chocofi_layers {
 
 // Aliases: Modifiers
 #define CTL_0    LCTL_T(KC_0)      // Left Ctrl if held, 0 if tapped
-#define CTRL_ESC LCTL_T(KC_ESC)    // Left Ctrl if held, escape if tapped
+#define CTL_ESC  LCTL_T(KC_ESC)    // Left Ctrl if held, escape if tapped
 #define OPT_0    LOPT_T(KC_0)      // Left Opt if held, 0 if tapped
 #define OPT_Z    LOPT_T(KC_Z)      // Left Opt when held, Z when tapped
 #define SFT_SPC  LSFT_T(KC_SPC)    // Left shift if held, space if tapped
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
         KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                               KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
         OPT_Z,   KC_X,    KC_C,    KC_V,    KC_B,                               KC_K,    KC_M ,   KC_COMM, KC_DOT,  KC_SLSH,
-                                   KC_LCMD, KC_LSFT, CTRL_ESC,        SYM_BSPC, NAV_SPC, FN
+                                   KC_LCMD, KC_LSFT, CTL_ESC,         SYM_BSPC, NAV_SPC, FN
     ),
     [_SYM] = LAYOUT_split_3x5_3(
         KC_TAB,  KC_7,    KC_8,    KC_9,    KC_PERC,                            KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_COLON,
