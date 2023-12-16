@@ -17,11 +17,11 @@ enum chocofi_layers {
 #define SYM_BSPC LT(_SYM, KC_BSPC) // Turn on symbol layer when held, backspace when tapped
 
 // Aliases: Modifiers
-#define CTL_0    LCTL_T(KC_0)      // Left Ctrl if held, 0 if tapped
-#define CTL_ESC  LCTL_T(KC_ESC)    // Left Ctrl if held, escape if tapped
-#define OPT_0    LOPT_T(KC_0)      // Left Opt if held, 0 if tapped
+#define CTL_0    LCTL_T(KC_0)      // Left Ctrl when held, 0 when tapped
+#define CTL_ESC  LCTL_T(KC_ESC)    // Left Ctrl when held, escape when tapped
+#define OPT_0    LOPT_T(KC_0)      // Left Opt when held, 0 when tapped
 #define OPT_Z    LOPT_T(KC_Z)      // Left Opt when held, Z when tapped
-#define SFT_SPC  LSFT_T(KC_SPC)    // Left shift if held, space if tapped
+#define SFT_SPC  LSFT_T(KC_SPC)    // Left shift when held, space when tapped
 
 // Aliases: Operating systems
 #define MAC      AG_NORM           // Unswap Alt & Opt and Gui & Cmd to work for Mac (default)
