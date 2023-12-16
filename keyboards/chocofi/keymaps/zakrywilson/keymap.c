@@ -4,11 +4,11 @@
 
 
 // Layers
-enum _chocofi_layers {
-  _BASE,  // Colemak
-  _SYM,   // Symbols and numbers
-  _NAV,   // Navigation and modifiers
-  _FN,    // F-keys, number pad, and misc.
+enum chocofi_layers {
+  _BASE = 0,  // Colemak
+  _SYM,       // Symbols and numbers
+  _NAV,       // Navigation and modifiers
+  _FN,        // F-keys, number pad, and misc.
 };
 
 // Aliases: Layer keys
