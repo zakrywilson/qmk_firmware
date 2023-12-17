@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Hold on other key press
 // Source: https://github.com/qmk/qmk_firmware/blob/master/docs/tap_hold.md#hold-on-other-key-press
-// Requires `#define HOLD_ON_OTHER_KEY_PRESS` in config.h
+// Requires `#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY` in config.h
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case SYM_BSPC:
