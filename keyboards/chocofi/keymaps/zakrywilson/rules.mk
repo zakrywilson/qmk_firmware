@@ -1,8 +1,3 @@
-# Liatris
-# MCU = atmega32u4
-# F_CPU = 16000000
-CONVERT_TO=promicro_rp2040  # Convert from Elite-C to standard RP2040
-
 # Features list:
 # https://github.com/qmk/qmk_firmware/blob/master/docs/config_options.md#feature-options-idfeature-options
 
