@@ -50,15 +50,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    KC_LCMD, KC_LSFT, CTL_ESC,         SYM_BSPC, NAV_SPC, FN
     ),
     [_SYM] = LAYOUT_split_3x5_3(
-        KC_TAB,  KC_7,    KC_8,    KC_9,    KC_PERC,                            KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_COLON,
+        KC_TAB,  KC_7,    KC_8,    KC_9,    KC_EXLM,                            KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_COLON,
         CTL_0,   KC_4,    KC_5,    KC_6,    KC_PIPE,                            KC_GRV,  KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT,
         OPT_0,   KC_1,    KC_2,    KC_3,    KC_COLON,                           KC_BSLS, KC_EQL,  KC_LT,   KC_GT,   KC_TRNS,
                                    KC_TRNS, SFT_SPC, CTL_0,            KC_TRNS, KC_LCMD, KC_LOPT
     ),
     [_NAV] = LAYOUT_split_3x5_3(
-        DT_UP,   DT_DOWN, DT_PRNT, MAC,     NIX,                                KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_PGUP,
-        KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_DEL,                             KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_ENT,  KC_HOME, KC_END,  KC_TRNS,
+        DT_UP,   DT_DOWN, DT_PRNT, MAC,     NIX,                                KC_NO,   KC_NO,   KC_UP,   KC_NO,   KC_NO,
+        KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_DEL,                             KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_HOME, KC_ENT,  KC_PGUP, KC_PGDN, KC_END,
                                    KC_TRNS, SFT_SPC, KC_TRNS,            KC_NO, KC_TRNS, KC_NO
     ),
     [_FN] = LAYOUT_split_3x5_3(
