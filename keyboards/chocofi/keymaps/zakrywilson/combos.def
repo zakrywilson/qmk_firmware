@@ -32,4 +32,5 @@ COMB(X_C__S_TAB,      S(KC_TAB),  KC_X,      KC_C)
 COMB(C_V__TAB,        KC_TAB,     KC_C,      KC_V)
 COMB(V_B__ENT,        KC_ENT,     KC_V,      KC_B)
 // Right hand
+COMB(Q_W__GRAVE,      KC_GRAVE,   KC_Q,      KC_W)
 COMB(M_COMM__ENT,     KC_ENT,     KC_M,      KC_COMM)
