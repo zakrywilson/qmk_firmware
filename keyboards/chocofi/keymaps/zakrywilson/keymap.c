@@ -21,6 +21,7 @@ enum chocofi_layers {
 #define CTL_ESC  LCTL_T(KC_ESC)    // Left Ctrl when held, escape when tapped
 #define OPT_0    LOPT_T(KC_0)      // Left Opt when held, 0 when tapped
 #define OPT_Z    LOPT_T(KC_Z)      // Left Opt when held, Z when tapped
+#define OPT_SLSH ROPT_T(KC_SLSH)   // Right Opt when held, / when tapped
 #define SFT_SPC  LSFT_T(KC_SPC)    // Left shift when held, space when tapped
 
 // Aliases: Operating systems
@@ -46,13 +47,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_split_3x5_3(
         KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
         KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                               KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
-        OPT_Z,   KC_X,    KC_C,    KC_V,    KC_B,                               KC_K,    KC_M ,   KC_COMM, KC_DOT,  KC_SLSH,
+        OPT_Z,   KC_X,    KC_C,    KC_V,    KC_B,                               KC_K,    KC_M ,   KC_COMM, KC_DOT,  OPT_SLSH,
                                    KC_LCMD, KC_LSFT, CTL_ESC,         SYM_BSPC, NAV_SPC, FN
     ),
     [_SYM] = LAYOUT_split_3x5_3(
         KC_TAB,  KC_7,    KC_8,    KC_9,    KC_EXLM,                            KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_COLON,
         CTL_0,   KC_4,    KC_5,    KC_6,    KC_PIPE,                            KC_GRV,  KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT,
-        OPT_0,   KC_1,    KC_2,    KC_3,    KC_COLON,                           KC_BSLS, KC_EQL,  KC_LT,   KC_GT,   KC_TRNS,
+        OPT_0,   KC_1,    KC_2,    KC_3,    KC_COLON,                           KC_BSLS, KC_EQL,  KC_LT,   KC_GT,   KC_SLSH,
                                    KC_TRNS, SFT_SPC, CTL_0,            KC_TRNS, KC_LCMD, KC_LOPT
     ),
     [_NAV] = LAYOUT_split_3x5_3(
