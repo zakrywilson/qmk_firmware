@@ -10,8 +10,7 @@
 # - DT_PRNT: types the current tapping term.
 # - DT_UP: Increases the current tapping term.
 # - DT_DOWN: Decreases the current tapping term.
-# TODO: Do we need this?
-# DYNAMIC_TAPPING_TERM_ENABLE = yes
+DYNAMIC_TAPPING_TERM_ENABLE = yes
 
 # Combos
 #
