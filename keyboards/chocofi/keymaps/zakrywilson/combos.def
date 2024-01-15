@@ -26,11 +26,11 @@ COMB(U_E__ASTR,       KC_ASTR,    KC_U,      KC_E)
 COMB(Y_I__LPRN,       KC_LPRN,    KC_Y,      KC_I)
 COMB(SCLN_O__RPRN,    KC_RPRN,    KC_SCLN,   KC_O)
 // Left hand
+COMB(Q_W__GRAVE,      KC_GRAVE,   KC_Q,      KC_W)
 COMB(P_G__DEL,        KC_DEL,     KC_P,      KC_G)
 COMB(T_D__BSPC,       KC_BSPC,    KC_T,      KC_D)
 COMB(X_C__S_TAB,      S(KC_TAB),  KC_X,      KC_C)
 COMB(C_V__TAB,        KC_TAB,     KC_C,      KC_V)
 COMB(V_B__ENT,        KC_ENT,     KC_V,      KC_B)
 // Right hand
-COMB(Q_W__GRAVE,      KC_GRAVE,   KC_Q,      KC_W)
 COMB(M_COMM__ENT,     KC_ENT,     KC_M,      KC_COMM)
