@@ -37,6 +37,9 @@
 // "Per key" requires implementing `get_hold_on_other_key_press` in keymap.c
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
+// https://docs.qmk.fm/#/feature_combo?id=combo-term
+#define COMBO_TERM 30
+
 // Reducing footprint
 // Source: https://docs.qmk.fm/#/squeezing_avr
 #undef LOCKING_SUPPORT_ENABLE
