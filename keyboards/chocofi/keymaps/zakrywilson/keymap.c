@@ -81,3 +81,17 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
       return false;
   }
 }
+
+// Per-combo timing
+// Source: https://docs.qmk.fm/#/feature_combo?id=per-combo-timing-holding-tapping-and-key-press-order
+// Requires `#define COMBO_TERM_PER_COMBO` in config.h
+uint16_t get_combo_term(uint16_t index, combo_t *combo) {
+  switch (combo->keycode) {
+    case KC_UNDS:
+    case KC_EQL:
+    case KC_DQT:
+      return 15;
+    default:
+      return COMBO_TERM;
+  }
+}
