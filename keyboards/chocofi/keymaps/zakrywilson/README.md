@@ -1,5 +1,23 @@
 # chocofi
 
+## Bit-C Pros
+
+**2025-11-07**: Not sure why, but the instructions we had before don't work. The following commands were the only thing that worked.
+
+**Tip**: Just run the flash command
+
+### Compiling
+
+```
+qmk compile -kb chocofi -km zakrywilson -e BOOTLOADER=atmel-dfu
+```
+
+### Flashing
+
+```
+qmk flash -kb chocofi -km zakrywilson -bl dfu
+```
+
 ## Default instructions
 
 Make example for this keyboard (after setting up your build environment):
