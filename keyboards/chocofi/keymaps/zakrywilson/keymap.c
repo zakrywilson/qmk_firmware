@@ -90,7 +90,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     case KC_UNDS:
     case KC_EQL:
     case KC_DQT:
-      return 10;
+      return 5;
     default:
       return COMBO_TERM;
   }
