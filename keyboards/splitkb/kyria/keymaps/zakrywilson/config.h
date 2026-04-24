@@ -24,6 +24,8 @@
 #define TAPPING_TERM 200
 #define TAPPING_TOGGLE 3
 
+#define DEBOUNCE 6
+
 #ifdef COMBO_ENABLE
   #define COMBO_COUNT 18
 #endif

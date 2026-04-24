@@ -2,3 +2,7 @@ OLED_ENABLE = yes
 ENCODER_ENABLE = no       # Enables the use of one or more encoders
 RGBLIGHT_ENABLE = no      # Enable keyboard RGB underglow
 COMBO_ENABLE = yes        # Enable Chording
+
+DEBOUNCE_TYPE = sym_defer_g
+BOOTLOADER = atmel-dfu
+CONSOLE_ENABLE = no
