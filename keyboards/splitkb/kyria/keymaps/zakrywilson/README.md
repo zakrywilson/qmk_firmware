@@ -63,14 +63,29 @@ Keymap 4: Functions
                   `-----------------------------'  `-----------------------------'
 ```
 
-## Compiling
+## Compiling (Modern QMK)
 
 ```sh
-make clean
+qmk compile -kb splitkb/kyria/rev1 -km zakrywilson
+```
+
+## Flashing (Modern QMK)
+
+```sh
+qmk flash -kb splitkb/kyria/rev1 -km zakrywilson
+```
+
+Note: This configuration is for **Kyria Rev 1** using **Elite-C** controllers (DFU bootloader).
+
+## Traditional Make Commands (Legacy)
+
+### Compiling
+
+```sh
 make splitkb/kyria/rev1:zakrywilson
 ```
 
-## Flashing
+### Flashing
 
 ```sh
 make splitkb/kyria/rev1:zakrywilson:flash
